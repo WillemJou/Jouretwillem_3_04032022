@@ -4,9 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Oh My Food</title>
 </head>
 <body>
-    
+    <header>
+        <img src="images/logo/ohmyfood.png" class="header__logo" alt="logo">
+    </header>
+
+    <main> 
+        <section class="research">
+            <div class="localisation"><img src="images/map-marker.png" class="png localisation__png" alt="marqueur de géolocalisation"> <input class="localisation__bar" placeholder="Paris, Belleville"></div>
+            <nav class="discover"><h1>Réservez le menu qui vous convient</h1><p>Découvrez des restaurants d'exeption, sélectionnés par nos soins</p><a href="#home-restaurants"><button>Explorer nos restaurants</button></a></nav>
+        </section>
+
+        <section class="functioning"> 
+            <div class="column">
+                <h1>Fonctionnement</h1>
+                <ol class="functioning__list">
+                <li><img src="images/mobile-screen-button-solid.png" class="png functionning__list__png" alt="smartphone">Choississez un restaurant</li>
+                <li> <img src="images/check-solid.png" class="png functionning__list__png" alt="menu">Composez votre menu</li>
+                <li><img src="images/store-solid.png" class="png functionning__list__png" alt="store">Dégustez au restaurant</li>
+            </div>
+        </section>
+
+        <section id="home-restaurants"><h1>Restaurants</h1>
+            <a class="card" href="menu/menu_la_palette_du_gout.html">
+                <div><img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" class="img card__img" alt="restaurant chic"><span class="new">Nouveau</span></div>
+                <div class="card__layout"><h3>La palette du goût</h3><img src="images/heart-regular.png" class="png card__png" alt="J'aime">
+                <div class="card__city" >Ménilmontant</div></a>
+            <a class="card" href="menu/menu_la_note_enchantee.html">
+                <div><img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" class="img card__img" alt="restaurant chic"><span class="new" >Nouveau</span></div>
+                <div class="card__layout"><h3>La note enchantée</h3><img src="images/heart-regular.png" class="png card__png__like" alt="J'aime">
+                <div class="card__city" >Charonne</div></a>
+            <a class="card" href="menu/menu_a_la_francaise.html">
+                <div><img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" class="img card__img" alt="restaurant chic"><span class="new" >Nouveau</span></div>
+                <div class="card__layout"><h3>À la française</h3><img src="images/heart-regular.png" class="png card__png__like" alt="J'aime">
+                <div class="card__city" >Cité Rouge</div></a>
+            <a class="card" href="menu/menule_delice_des_sens.html">
+                <div><img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" class="img card__img" alt="restaurant chic"><span class="new" >Nouveau</span></div>
+                <div class="card__layout"><h3>La palette du goût</h3><img src="images/heart-regular.png" class="png card__png__like" alt="J'aime">
+                <div class="card__city">Folie-Méricourt</div></a>        
+        </section></main>
+
+        <footer>
+            <div class="footer__layout">
+                <h3 class="footer__title" >Ohmyfood</h3>
+                <ul class="footer__list" >
+                    <li><a href="#" class="rows footer__list__text"> <img src="images/utensils-solid.png" class="png footer__png" alt="couvert">Proposer un restaurant</a></li>
+                    <li><a href="#" class="row footer__list__text"> <img src="images/handshake-angle-solid.png" class="png footer__png" alt="participer">Devenir partenaire</a></li>
+                    <li><a href="#" class="footer__list__text">Mentions légales</a></li>
+                    <li><a href="input" class="footer__list__text">Contact</a></li>
+            </div>
+        </footer>
 </body>
 </html>
