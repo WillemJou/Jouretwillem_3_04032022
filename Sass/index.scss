@@ -1,0 +1,108 @@
+$color__primary: #9356DC;
+$color__secondary:#969696;
+$tertiary__color: #99E2D0;
+
+$button__radius: 40px;
+$discover__button__omber: 0px 1px 5px #aaa;
+
+$functionning__omber: 0px 1px 5px #aaa;
+$padd: 20px;
+$functionning__radius: 20px;
+
+
+$icon__width: 15px;
+$img__width: 250px;
+$img__padd: 0 20px;
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+}
+
+
+@mixin design-functionning__li{
+    box-shadow: $functionning__omber;
+    padding: $padd;
+    border-radius: $functionning__radius;
+}
+
+
+.header__logo{
+    display: block;
+    width: 40%;
+    margin: 3% 30%;
+}
+
+%design-discover__button {
+    border-radius: $discover__button__radius;
+    box-shadow: $discover__button__omber;
+    background-color: $color__primary;
+    padding: $padd;
+}
+%pattern-png{
+    width: $icon__width;
+    padding: $img__padd; 
+}
+.card__img{
+    width: $img__width;
+}
+
+.localisation__png{
+    @extend %pattern__png;
+}
+.functionning__list__png{
+    @extend %pattern__png;
+}
+.card__png__like{
+    @extend %pattern__png;
+}
+.card__png__{
+    @extend %pattern__png;
+}
+.footer__png{
+    @extend %pattern__png;
+}
+
+body{
+    margin: 0;
+}
+
+.research{
+
+
+    .localisation{
+      
+        box-shadow: 0px -1px 5px #aaa; 
+        background-color: hsla(0, 0%, 79%, 0.486);
+        @include flex-center;
+    }
+
+    .discover{
+        @include flex-column;
+
+        .discover__button{
+            @include design-discover__button;
+
+        }
+    }
+}
+.functionning{
+
+    .functionning__list{
+
+        .functionning__list__li{
+            @include design-functionning__li
+        }
+    }
+}
+
+        
+    
+
