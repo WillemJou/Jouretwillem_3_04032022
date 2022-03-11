@@ -1,23 +1,47 @@
 $color__primary: #9356DC;
-$color__secondary:#969696;
-$tertiary__color: #99E2D0;
+$color__secondary:#FF79DA;
+$color__tertiary: #99E2D0;
+$color__background:hsla(0, 2%, 89%, 0.329);
+
+$gradient-color: #FF79DA,#9356DC;
+
+$bold-font: 600;
+$white-font:white;
 
 $button__radius: 40px;
-$discover__button__omber: 0px 1px 5px #aaa;
-
-$functionning__omber: 0px 1px 5px #aaa;
-$padd: 20px;
-$functionning__radius: 20px;
+$bottom__omber: 2px 2px 7px #aaa;
+$discover__button__radius: 45px;
 
 
-$icon__width: 15px;
-$img__width: 250px;
-$img__padd: 0 20px;
+
+$padd: 15px;
+$space-between-column: 20px;
+$padding-side: 5%;
+
+
+
+$localisation__padd: 15px 0;
+$radius: 15px;
+
+
+$icon__little-width: 10px;
+$icon__functionning-width: 15px;
+$img__width: 100%;
+$icon__padd: 0 20px;
+
+@mixin primary-font {
+    font-family: 'Roboto';  
+}
+
+@mixin secondary-font{
+    font-family: 'Shrikhand';
+}
 
 @mixin flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
+    align-items: baseline;
 }
 @mixin flex-column {
     display: flex;
@@ -25,84 +49,190 @@ $img__padd: 0 20px;
     align-items: center;
     flex-direction: column;  
 }
+%padding-side{
+    padding: $padding-side;
+}
 
+@mixin research {
+    background-color: $color__background;  
+
+}
+
+@mixin discover__layout {
+    padding-bottom: 15% ;
+    
+}
+
+@mixin neutral-link {
+    text-decoration: none;
+      
+}
+
+@mixin localisation__bar {
+    background-color: transparent;
+    border: none;
+    font-weight: $bold-font;
+    padding: $localisation__padd;
+    
+}
+
+@mixin text-alignment {
+    text-align: center;
+    
+}
 
 @mixin design-functionning__li{
-    box-shadow: $functionning__omber;
+    box-shadow: $bottom__omber;
     padding: $padd;
-    border-radius: $functionning__radius;
+    margin:$space-between-column;
+    background-color: $color__background;
+    border-radius: $radius;
+    @include neutral-link;
+    list-style-type: decimal;
+    font-size: 0.9em;
+
 }
 
-
-.header__logo{
-    display: block;
-    width: 40%;
-    margin: 3% 30%;
+@mixin design-functionning__li--hover {
+     background-color: hsla(267, 66%, 60%, 0.274);
 }
 
-%design-discover__button {
+@mixin design-discover__button {
     border-radius: $discover__button__radius;
-    box-shadow: $discover__button__omber;
-    background-color: $color__primary;
+    box-shadow: $bottom__omber;
     padding: $padd;
+    border: none;
+    background: linear-gradient($gradient-color);
+    color: $white-font;
 }
-%pattern-png{
-    width: $icon__width;
-    padding: $img__padd; 
+
+@mixin design-ol {
+    background-color: #9356DC;
+    
 }
-.card__img{
+
+@mixin style-img__card{
     width: $img__width;
+    position: relative;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+%padding-side{
+    padding: $padding-side;
+} 
+
+%pattern-png{
+    width: $icon__little-width;
+    padding: $icon__padd; 
 }
 
 .localisation__png{
-    @extend %pattern__png;
+    @extend %pattern-png;
 }
 .functionning__list__png{
-    @extend %pattern__png;
+    width: $icon__functionning-width;
+    padding: $icon__padd;
 }
 .card__png__like{
-    @extend %pattern__png;
+    @extend %pattern-png;
 }
 .card__png__{
-    @extend %pattern__png;
+    @extend %pattern-png;
 }
 .footer__png{
-    @extend %pattern__png;
+    @extend %pattern-png;
 }
 
 body{
     margin: 0;
+    font-family: 'Roboto';
+}
+
+ .header__logo{
+    display: block;
+    width: 40%;
+    margin: 3% 30%;
+    
 }
 
 .research{
-
+@include research;
 
     .localisation{
       
         box-shadow: 0px -1px 5px #aaa; 
         background-color: hsla(0, 0%, 79%, 0.486);
         @include flex-center;
+        
+        .localisation__bar{
+            @include primary-font;
+            @include localisation__bar;
+        }
+        ::placeholder{
+            color: black;
+        }
     }
 
     .discover{
         @include flex-column;
+        @include discover__layout;
+
+        h1{
+            font-size: 1.5em;
+            padding: 9% 0 0 15%;
+            margin: 0;
+            @include text-alignment;
+            
+        }
+
+        p{
+            padding: 5% 0 5% 3%;
+            margin: 0;
+            @include text-alignment;
+        }
 
         .discover__button{
             @include design-discover__button;
 
+
+        }
+        a{
+            @include neutral-link;
         }
     }
+
 }
 .functionning{
 
-    .functionning__list{
+    @extend %padding-side;
 
+    .functionning__list{
+        
         .functionning__list__li{
-            @include design-functionning__li
+            @include design-functionning__li;
+            font-weight: $bold-font;
+        }
+        .functionning__list__li:hover{
+            @include design-functionning__li--hover
         }
     }
 }
 
-        
+#home-restaurants{
+    @extend %padding-side;
+    background-color: $color__background;
     
+    .card{
+        
+        .card__img{
+            
+            @include style-img__card
+        }
+
+        .new{
+           
+        }
+    }
+}
 

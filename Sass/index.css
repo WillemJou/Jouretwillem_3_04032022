@@ -1,5 +1,24 @@
+.functionning, #home-restaurants {
+  padding: 5%;
+}
+
+.functionning, #home-restaurants {
+  padding: 5%;
+}
+
+.localisation__png, .card__png__like, .card__png__, .footer__png {
+  width: 10px;
+  padding: 0 20px;
+}
+
+.functionning__list__png {
+  width: 15px;
+  padding: 0 20px;
+}
+
 body {
   margin: 0;
+  font-family: 'Roboto';
 }
 
 .header__logo {
@@ -8,13 +27,8 @@ body {
   margin: 3% 30%;
 }
 
-.localisation__png, .functionning__list__png, .card__png__like, .card__png__, .footer__png {
-  width: 15px;
-  padding: 0 20px;
-}
-
-.card__img {
-  width: 250px;
+.research {
+  background-color: rgba(228, 226, 226, 0.329);
 }
 
 .research .localisation {
@@ -30,6 +44,33 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.research .localisation .localisation__bar {
+  font-family: 'Roboto';
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  padding: 15px 0;
+}
+
+.research .localisation ::-webkit-input-placeholder {
+  color: black;
+}
+
+.research .localisation :-ms-input-placeholder {
+  color: black;
+}
+
+.research .localisation ::-ms-input-placeholder {
+  color: black;
+}
+
+.research .localisation ::placeholder {
+  color: black;
 }
 
 .research .discover {
@@ -46,20 +87,62 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-bottom: 15%;
+}
+
+.research .discover h1 {
+  font-size: 1.5em;
+  padding: 9% 0 0 15%;
+  margin: 0;
+  text-align: center;
+}
+
+.research .discover p {
+  padding: 5% 0 5% 3%;
+  margin: 0;
+  text-align: center;
 }
 
 .research .discover .discover__button {
-  border-radius: 40px;
-  -webkit-box-shadow: 0px 1px 5px #aaa;
-          box-shadow: 0px 1px 5px #aaa;
-  background-color: #9356DC;
-  padding: 20px;
+  border-radius: 45px;
+  -webkit-box-shadow: 2px 2px 7px #aaa;
+          box-shadow: 2px 2px 7px #aaa;
+  padding: 15px;
+  border: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: white;
+}
+
+.research .discover a {
+  text-decoration: none;
 }
 
 .functionning .functionning__list .functionning__list__li {
-  -webkit-box-shadow: 0px 1px 5px #aaa;
-          box-shadow: 0px 1px 5px #aaa;
-  padding: 20px;
-  border-radius: 20px;
+  -webkit-box-shadow: 2px 2px 7px #aaa;
+          box-shadow: 2px 2px 7px #aaa;
+  padding: 15px;
+  margin: 20px;
+  background-color: rgba(228, 226, 226, 0.329);
+  border-radius: 15px;
+  text-decoration: none;
+  list-style-type: decimal;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.functionning .functionning__list .functionning__list__li:hover {
+  background-color: rgba(146, 86, 220, 0.274);
+}
+
+#home-restaurants {
+  background-color: rgba(228, 226, 226, 0.329);
+}
+
+#home-restaurants .card .card__img {
+  width: 100%;
+  position: relative;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 /*# sourceMappingURL=index.css.map */
