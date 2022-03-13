@@ -1,71 +1,164 @@
 $color__primary: #9356DC;
 $color__secondary:#FF79DA;
 $color__tertiary: #99E2D0;
-$color__background:hsla(0, 2%, 89%, 0.329);
+$darken__background:hsla(0, 2%, 89%, 0.329);
+$localisation__background__color: hsla(283, 6%, 77%, 0.411);
+$color__text-new: hsl(165, 47%, 25%);
+
 
 $gradient-color: #FF79DA,#9356DC;
 
 $bold-font: 600;
 $white-font:white;
 
-$button__radius: 40px;
 $bottom__omber: 2px 2px 7px #aaa;
-$discover__button__radius: 45px;
-
-
 
 $padd: 15px;
-$space-between-column: 20px;
-$padding-side: 5%;
-
-
-
+$padding-button__order: 15px 45px;
+$icon__padd: 0 20px;
 $localisation__padd: 15px 0;
-$radius: 15px;
+$padding-side: 5%; 
+$padding-left-card__cartel: 15px;
+$padding-top-bottom: 15px 0;
+$padding-bottom: 19px;
+$padding-title: 15px 0 5px 0;
+$padding-big: 20px 40px 50px 40px;
 
+
+
+$space-between-column: 20px;
+
+$discover__button__radius: 45px;
+$radius: 15px;
+$new-radius: 5px;
 
 $icon__little-width: 10px;
+$icon__big-width: 42px;
+$icon__big-height: 45px;
 $icon__functionning-width: 15px;
+$icon__return: 22px;
 $img__width: 100%;
-$icon__padd: 0 20px;
+$img__height: 326px;
 
-@mixin primary-font {
+
+
+%primary-font {
     font-family: 'Roboto';  
 }
 
-@mixin secondary-font{
+%secondary-font{
     font-family: 'Shrikhand';
 }
 
-@mixin flex-center {
+%padding-side{
+    padding: $padding-side;
+}
+
+%padding-top-bottom{
+    padding: $padding-top-bottom;
+}
+
+%white-background{
+    background-color: white;
+}
+
+%darken-background{
+    background-color: $darken__background;
+}
+
+%color__text-new{ 
+    color: $color__text-new;
+
+}
+
+%bold{
+    font-weight: bold;
+}
+
+%design-block{
+    box-shadow: $bottom__omber;
+    padding: $padd;
+    border-radius: $radius;
+}
+
+%neutral-link {
+    text-decoration: none;
+    color: black;   
+}
+
+%pattern-png{
+    width: $icon__little-width;
+    padding: $icon__padd; 
+}
+
+%padding-top-bottom{
+    margin: $padding-top-bottom;
+}
+
+%top-radius {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+%flex-align-up {
+    display: flex;
+    align-items: flex-start;
+
+}
+
+%design-button{
+    border-radius: $discover__button__radius;
+    box-shadow: $bottom__omber;
+    border: none;
+    background: linear-gradient($gradient-color);
+    color: $white-font;
+    cursor: pointer; 
+}
+
+%position-relative{
+    position: relative;
+}
+
+%position-absolute{
+    position: absolute;
+}
+
+%width-img{
+    width: $img__width;
+}
+
+%flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
-    align-items: baseline;
+    
 }
-@mixin flex-column {
+%flex-column {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;  
 }
-%padding-side{
-    padding: $padding-side;
+
+%space-between-side{
+    display: flex;
+    justify-content: space-between;
 }
 
-@mixin research {
-    background-color: $color__background;  
 
-}
 
-@mixin discover__layout {
-    padding-bottom: 15% ;
+@mixin heart-pattern {
+    @extend %position-absolute;
+    width: $icon__big-width; height: $icon__big-height;
+    left: 88%; bottom: 7%;
     
 }
 
-@mixin neutral-link {
-    text-decoration: none;
-      
+
+@mixin discover__layout {
+    padding-bottom: 15% ;
+    @extend %darken-background;
+    
 }
 
 @mixin localisation__bar {
@@ -82,12 +175,10 @@ $icon__padd: 0 20px;
 }
 
 @mixin design-functionning__li{
-    box-shadow: $bottom__omber;
-    padding: $padd;
-    margin:$space-between-column;
-    background-color: $color__background;
-    border-radius: $radius;
-    @include neutral-link;
+   @extend %design-block;
+   margin:$space-between-column;
+    @extend %darken-background;
+    @extend %neutral-link;
     list-style-type: decimal;
     font-size: 0.9em;
 
@@ -98,13 +189,40 @@ $icon__padd: 0 20px;
 }
 
 @mixin design-discover__button {
-    border-radius: $discover__button__radius;
-    box-shadow: $bottom__omber;
     padding: $padd;
-    border: none;
-    background: linear-gradient($gradient-color);
-    color: $white-font;
+    @extend %design-button;
 }
+
+@mixin design-order__button {
+    @extend %design-button;
+    @extend %flex-center;
+    padding: $padding-button__order;
+    
+}
+
+@mixin new{
+    background-color: $color__tertiary;
+    @extend %color__text-new;
+    position:absolute;
+    padding: $padd;
+    border-radius: $new-radius;
+   left: 77%; bottom: 79%; right: 3%;
+   @include text-alignment;
+}
+
+@mixin card{
+    border-radius: $radius;
+    @extend %white-background;
+    margin: 20px 0;
+    @extend %position-relative;
+
+}
+
+@mixin card-cartel {
+    margin-left: $padding-left-card__cartel;  
+    border-radius: $radius;  
+}
+
 
 @mixin design-ol {
     background-color: #9356DC;
@@ -112,20 +230,63 @@ $icon__padd: 0 20px;
 }
 
 @mixin style-img__card{
-    width: $img__width;
-    position: relative;
-    border-top-left-radius: $radius;
-    border-top-right-radius: $radius;
+    @extend %width-img; height: $img__height;
+    object-fit: cover;
+    @extend %top-radius;
+    
+    
 }
 
-%padding-side{
-    padding: $padding-side;
-} 
-
-%pattern-png{
-    width: $icon__little-width;
-    padding: $icon__padd; 
+@mixin menu-style {
+    @extend %darken-background;
+    @extend %top-radius;
+    
 }
+
+@mixin design-menu__part__choice {
+    @extend %design-block;
+    @extend %padding-top-bottom;
+    
+}
+
+@mixin menu-img {
+    @extend %width-img; height:$img__height;
+    background-image:url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg); 
+    
+}
+
+@mixin design-menu__part__title{
+    @extend %color__text-new;
+    font-weight: 400; 
+   
+}
+
+@mixin center {
+    @extend %flex-center;
+    padding: $padding-big;
+      
+}
+
+@mixin layout-menu__part {
+    padding: $icon__padd;
+    margin: 0;
+}
+
+@mixin line {
+    border-bottom: solid 3px $color__tertiary;
+    width: 45px;
+}
+
+@mixin card-city {
+    padding-bottom: $padding-bottom;
+    
+}
+@mixin footer {
+    background-color: hsl(0, 3%, 19%);
+    color: $white-font;
+    
+}
+
 
 .localisation__png{
     @extend %pattern-png;
@@ -135,18 +296,49 @@ $icon__padd: 0 20px;
     padding: $icon__padd;
 }
 .card__png__like{
-    @extend %pattern-png;
+    @include heart-pattern;
+}
+
+.card__png__menu__like{
+    width: $icon__big-width; 
+    padding: $icon__padd;
 }
 .card__png__{
     @extend %pattern-png;
 }
 .footer__png{
-    @extend %pattern-png;
+    width:$icon__functionning-width;
+    padding-right: $padd;
+   
 }
+
+.png__return{
+    width: $icon__return;
+    padding: $padd;
+}
+
+
+
+
+
+
 
 body{
     margin: 0;
     font-family: 'Roboto';
+}
+
+a{
+    @extend %neutral-link;
+}
+
+ul{
+    list-style: none;
+}
+
+h3{
+    margin: 0;
+    padding: $padding-title;
 }
 
  .header__logo{
@@ -156,17 +348,18 @@ body{
     
 }
 
+
 .research{
-@include research;
+
 
     .localisation{
       
         box-shadow: 0px -1px 5px #aaa; 
-        background-color: hsla(0, 0%, 79%, 0.486);
-        @include flex-center;
+        background-color: $localisation__background__color;
+        @extend %flex-center;
         
         .localisation__bar{
-            @include primary-font;
+            @extend %primary-font;
             @include localisation__bar;
         }
         ::placeholder{
@@ -175,7 +368,7 @@ body{
     }
 
     .discover{
-        @include flex-column;
+        @extend %flex-column;
         @include discover__layout;
 
         h1{
@@ -194,12 +387,8 @@ body{
 
         .discover__button{
             @include design-discover__button;
-
-
         }
-        a{
-            @include neutral-link;
-        }
+        
     }
 
 }
@@ -221,18 +410,127 @@ body{
 
 #home-restaurants{
     @extend %padding-side;
-    background-color: $color__background;
+    @extend %darken-background;
     
     .card{
+
+        @include card;
+    
         
         .card__img{
             
-            @include style-img__card
+            @include style-img__card;
         }
 
         .new{
+            @include new;
            
         }
+
+        .card__cartel{
+            @include card-cartel;
+           
+        }
+
+        .card__city{
+            @include card-city;
+        }
+
+    }
+
+}
+
+.footer__layout{
+
+    @include footer;
+
+
+    .footer__title{
+        @extend %secondary-font;
+        padding-left: $padd;
+    }
+    a{
+        color: $white-font;        
+    }
+    li{
+        padding-top: $padd;
+    }
+    .footer__list{
+        list-style: none;
+        margin: 0;
+        padding-bottom: $padd;
+        padding-left: $padd;
     }
 }
+
+
+
+.header-menu{
+    @extend %flex-center;
+
+
+    .header__logo__menu{
+        display: block;
+        width: 40%;
+        margin: 3% 20%;
+    }
+
+}
+
+.menu__img{
+    @include menu-img;
+}
+
+.menu{
+
+@include menu-style; 
+
+    .title__menu__layout{
+
+    @extend %flex-center;
+    }
+    
+    .menu__title{
+        @extend %secondary-font;
+    }
+
+    .menu__part{
+        @include layout-menu__part;
+    }
+
+    .menu__part__title{
+        @include design-menu__part__title
+        
+    }
+
+    .line{
+        @include line;
+    }
+
+    .menu__part__choice{
+        h3{
+            padding: 0 0 5px 0;
+        }
+        @include design-menu__part__choice;
+    }
+    .rows{
+        @extend %space-between-side;
+    }
+
+    .bold{
+        @extend %bold;
+    }
+
+    .center{
+       
+        @include center;
+
+        .button__order{
+        @include design-order__button;
+        }
+    }
+
+}
+
+
 
