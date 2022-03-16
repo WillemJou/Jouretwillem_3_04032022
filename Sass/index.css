@@ -19,7 +19,7 @@
 }
 
 .research .discover, .functionning .functionning__list .functionning__list__li, #home-restaurants, .menu {
-  background-color: rgba(228, 226, 226, 0.329);
+  background-color: #f2f2f2;
 }
 
 #home-restaurants .card .new, .menu .menu__part__title {
@@ -71,10 +71,6 @@ a, .functionning .functionning__list .functionning__list__li {
   position: relative;
 }
 
-.card__png__like {
-  position: absolute;
-}
-
 #home-restaurants .card .card__img, .menu__img {
   width: 100%;
 }
@@ -89,6 +85,15 @@ a, .functionning .functionning__list .functionning__list__li {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.space-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .research .discover {
@@ -107,7 +112,7 @@ a, .functionning .functionning__list .functionning__list__li {
           flex-direction: column;
 }
 
-.menu .rows {
+.rows, .space-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,8 +129,7 @@ a, .functionning .functionning__list .functionning__list__li {
 .card__png__like {
   width: 42px;
   height: 45px;
-  left: 88%;
-  bottom: 7%;
+  padding: 15px 5% 0 0;
 }
 
 .card__png__menu__like {
@@ -148,13 +152,20 @@ body {
   font-family: 'Roboto';
 }
 
+.main__menu {
+  background-color: #f2f2f2;
+}
+
 ul {
   list-style: none;
 }
 
 h3 {
   margin: 0;
-  padding: 15px 0 5px 0;
+}
+
+.like__button {
+  padding: 0 10px;
 }
 
 .header__logo {
@@ -173,7 +184,7 @@ h3 {
   background-color: transparent;
   border: none;
   font-weight: 600;
-  padding: 15px 0;
+  padding: 3% 2%;
 }
 
 .research .localisation ::-webkit-input-placeholder {
@@ -198,15 +209,13 @@ h3 {
 
 .research .discover h1 {
   font-size: 1.5em;
-  padding: 9% 0 0 15%;
-  margin: 0;
+  margin-top: 10%;
   text-align: center;
 }
 
 .research .discover p {
-  padding: 5% 0 5% 3%;
-  margin: 0;
   text-align: center;
+  margin-bottom: 8%;
 }
 
 .research .discover .discover__button {
@@ -215,6 +224,10 @@ h3 {
 
 .functionning .functionning__list .functionning__list__li {
   margin: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-overflow: "...";
   list-style-type: decimal;
   font-size: 0.9em;
   font-weight: 600;
@@ -226,7 +239,7 @@ h3 {
 
 #home-restaurants .card {
   border-radius: 15px;
-  margin: 20px 0;
+  margin: 50px 0;
 }
 
 #home-restaurants .card .card__img {
@@ -237,13 +250,13 @@ h3 {
 
 #home-restaurants .card .new {
   background-color: #99E2D0;
-  position: absolute;
   padding: 15px;
+  position: absolute;
   border-radius: 5px;
-  left: 77%;
   bottom: 79%;
   right: 3%;
   text-align: center;
+  text-overflow: ellipsis;
 }
 
 #home-restaurants .card .card__cartel {
@@ -258,10 +271,11 @@ h3 {
 .footer__layout {
   background-color: #322f2f;
   color: white;
+  padding: 19px;
 }
 
 .footer__layout .footer__title {
-  padding-left: 15px;
+  padding: 15px 0 0 15px;
 }
 
 .footer__layout a {
@@ -287,7 +301,12 @@ h3 {
 
 .menu__img {
   height: 326px;
-  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  position: relative;
+}
+
+.menu {
+  position: relative;
+  bottom: 70px;
 }
 
 .menu .menu__part {
@@ -304,12 +323,16 @@ h3 {
   width: 45px;
 }
 
+.menu .menu__part__choice {
+  background-color: white;
+}
+
 .menu .menu__part__choice h3 {
   padding: 0 0 5px 0;
 }
 
 .menu .center {
-  padding: 20px 40px 50px 40px;
+  padding: 50px 40px 0 40px;
 }
 
 .menu .center .button__order {

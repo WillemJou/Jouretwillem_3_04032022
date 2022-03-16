@@ -1,7 +1,7 @@
 $color__primary: #9356DC;
 $color__secondary:#FF79DA;
 $color__tertiary: #99E2D0;
-$darken__background:hsla(0, 2%, 89%, 0.329);
+$darken__background:hsl(0, 0%, 95%);
 $localisation__background__color: hsla(283, 6%, 77%, 0.411);
 $color__text-new: hsl(165, 47%, 25%);
 
@@ -9,20 +9,22 @@ $color__text-new: hsl(165, 47%, 25%);
 $gradient-color: #FF79DA,#9356DC;
 
 $bold-font: 600;
-$white-font:white;
+$white:white;
 
 $bottom__omber: 2px 2px 7px #aaa;
 
 $padd: 15px;
 $padding-button__order: 15px 45px;
 $icon__padd: 0 20px;
-$localisation__padd: 15px 0;
+$localisation__padd: 3% 2%;
 $padding-side: 5%; 
 $padding-left-card__cartel: 15px;
 $padding-top-bottom: 15px 0;
 $padding-bottom: 19px;
 $padding-title: 15px 0 5px 0;
-$padding-big: 20px 40px 50px 40px;
+$padding-title__footer: 15px 0 0 15px;
+$padding-big: 50px 40px 0 40px;
+$padding-heart: 15px 5% 0 0;
 
 
 
@@ -111,7 +113,7 @@ $img__height: 326px;
     box-shadow: $bottom__omber;
     border: none;
     background: linear-gradient($gradient-color);
-    color: $white-font;
+    color: $white;
     cursor: pointer; 
 }
 
@@ -133,6 +135,10 @@ $img__height: 326px;
     justify-content: center;
     
 }
+%flex-align-center{
+    display: flex;
+    align-items: center;
+}
 %flex-column {
     display: flex;
     justify-content: center;
@@ -148,10 +154,9 @@ $img__height: 326px;
 
 
 @mixin heart-pattern {
-    @extend %position-absolute;
     width: $icon__big-width; height: $icon__big-height;
-    left: 88%; bottom: 7%;
-    
+    padding: $padding-heart;
+
 }
 
 
@@ -179,6 +184,10 @@ $img__height: 326px;
    margin:$space-between-column;
     @extend %darken-background;
     @extend %neutral-link;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-overflow: "...";
     list-style-type: decimal;
     font-size: 0.9em;
 
@@ -193,6 +202,7 @@ $img__height: 326px;
     @extend %design-button;
 }
 
+
 @mixin design-order__button {
     @extend %design-button;
     @extend %flex-center;
@@ -203,17 +213,18 @@ $img__height: 326px;
 @mixin new{
     background-color: $color__tertiary;
     @extend %color__text-new;
-    position:absolute;
     padding: $padd;
+    position: absolute;
     border-radius: $new-radius;
-   left: 77%; bottom: 79%; right: 3%;
-   @include text-alignment;
+    bottom: 79%; right: 3%;
+   text-align: center;
+   text-overflow: ellipsis;
 }
 
 @mixin card{
     border-radius: $radius;
     @extend %white-background;
-    margin: 20px 0;
+    margin: 50px 0;
     @extend %position-relative;
 
 }
@@ -240,18 +251,21 @@ $img__height: 326px;
 @mixin menu-style {
     @extend %darken-background;
     @extend %top-radius;
+    position: relative;
+    bottom: 70px;
     
 }
 
 @mixin design-menu__part__choice {
     @extend %design-block;
     @extend %padding-top-bottom;
+    background-color: $white;
     
 }
 
 @mixin menu-img {
     @extend %width-img; height:$img__height;
-    background-image:url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg); 
+    position: relative;
     
 }
 
@@ -283,7 +297,8 @@ $img__height: 326px;
 }
 @mixin footer {
     background-color: hsl(0, 3%, 19%);
-    color: $white-font;
+    color: $white;
+    padding: $padding-bottom;
     
 }
 
@@ -328,6 +343,10 @@ body{
     font-family: 'Roboto';
 }
 
+.main__menu{
+    background-color: $darken__background;
+}
+
 a{
     @extend %neutral-link;
 }
@@ -338,7 +357,10 @@ ul{
 
 h3{
     margin: 0;
-    padding: $padding-title;
+}
+.like__button{
+    padding: 0 10px;
+    ;
 }
 
  .header__logo{
@@ -346,6 +368,15 @@ h3{
     width: 40%;
     margin: 3% 30%;
     
+}
+.rows{
+    @extend %space-between-side;
+}
+
+.space-card{
+    @extend %space-between-side;
+    @extend %flex-align-center;
+
 }
 
 
@@ -373,16 +404,14 @@ h3{
 
         h1{
             font-size: 1.5em;
-            padding: 9% 0 0 15%;
-            margin: 0;
+            margin-top: 10%;
             @include text-alignment;
             
         }
 
         p{
-            padding: 5% 0 5% 3%;
-            margin: 0;
             @include text-alignment;
+            margin-bottom: 8%;
         }
 
         .discover__button{
@@ -447,10 +476,10 @@ h3{
 
     .footer__title{
         @extend %secondary-font;
-        padding-left: $padd;
+        padding: $padding-title__footer;
     }
     a{
-        color: $white-font;        
+        color: $white;        
     }
     li{
         padding-top: $padd;
@@ -512,9 +541,6 @@ h3{
             padding: 0 0 5px 0;
         }
         @include design-menu__part__choice;
-    }
-    .rows{
-        @extend %space-between-side;
     }
 
     .bold{
