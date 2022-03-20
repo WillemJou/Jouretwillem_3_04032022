@@ -61,8 +61,8 @@ a, .functionning .functionning__list .functionning__list__li {
   -webkit-box-shadow: 2px 2px 7px #aaa;
           box-shadow: 2px 2px 7px #aaa;
   border: none;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
-  background: linear-gradient(#FF79DA, #9356DC);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff7ad9), to(#9256dc));
+  background: linear-gradient(#ff7ad9, #9256dc);
   color: white;
   cursor: pointer;
 }
@@ -87,7 +87,7 @@ a, .functionning .functionning__list .functionning__list__li {
           justify-content: center;
 }
 
-.space-card {
+.space-card, .menu .menu__part__choice .checkbox-style, .menu .menu__part__choice :hover .checkbox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -112,13 +112,45 @@ a, .functionning .functionning__list .functionning__list__li {
           flex-direction: column;
 }
 
-.rows, .space-card {
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 50% 50%;
+      grid-template-rows: 50% 50%;
+  -ms-grid-columns: 60% 25% 15%;
+      grid-template-columns: 60% 25% 15%;
+}
+
+.rows {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.space-between, .space-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.research .discover .discover__button:hover, .menu .center .button__order:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 143, 223, 0.993)), to(#9250e2));
+  background: linear-gradient(rgba(255, 143, 223, 0.993), #9250e2);
+}
+
+.research .discover .discover__button:hover, .menu .center .button__order:hover {
+  -webkit-box-shadow: 6px 6px 10px #aaa;
+          box-shadow: 6px 6px 10px #aaa;
+}
+
+.functionning .functionning__list .functionning__list__li, .menu .menu__part__choice, .menu .menu__part__choice .overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .functionning__list__png {
@@ -164,14 +196,38 @@ h3 {
   margin: 0;
 }
 
+.heart-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100px;
+  height: 46px;
+}
+
 .like__button {
-  padding: 0 10px;
+  cursor: pointer;
+  background-image: url("/images/heart-regular.png");
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30px;
+  height: 30px;
 }
 
 .header__logo {
   display: block;
   width: 40%;
   margin: 3% 30%;
+}
+
+.space-card {
+  height: 46px;
 }
 
 .research .localisation {
@@ -224,10 +280,6 @@ h3 {
 
 .functionning .functionning__list .functionning__list__li {
   margin: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-overflow: "...";
   list-style-type: decimal;
   font-size: 0.9em;
   font-weight: 600;
@@ -325,10 +377,38 @@ h3 {
 
 .menu .menu__part__choice {
   background-color: white;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 3;
 }
 
 .menu .menu__part__choice h3 {
   padding: 0 0 5px 0;
+}
+
+.menu .menu__part__choice .checkbox-style {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #99E2D0;
+  z-index: -1;
+  z-index: 2;
+}
+
+.menu .menu__part__choice :hover .checkbox {
+  background-color: #99E2D0;
+  z-index: -1;
+  display: block;
+  z-index: 2;
 }
 
 .menu .center {

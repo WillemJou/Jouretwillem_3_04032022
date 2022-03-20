@@ -6,12 +6,14 @@ $localisation__background__color: hsla(283, 6%, 77%, 0.411);
 $color__text-new: hsl(165, 47%, 25%);
 
 
-$gradient-color: #FF79DA,#9356DC;
+$gradient-color: hsl(317, 100%, 74%),hsl(267, 66%, 60%);
+$gradient-color-hover:hsla(317, 100%, 78%, 0.993),hsl(267, 72%, 60%);
 
 $bold-font: 600;
 $white:white;
 
 $bottom__omber: 2px 2px 7px #aaa;
+$bottom__omber-hover: 6px 6px 10px #aaa;
 
 $padd: 15px;
 $padding-button__order: 15px 45px;
@@ -146,9 +148,35 @@ $img__height: 326px;
     flex-direction: column;  
 }
 
+%grid{
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 60% 25% 15%;
+}
+
+%rows{
+    display: flex;
+
+}
+
 %space-between-side{
     display: flex;
+    position: relative;
     justify-content: space-between;
+}
+
+%lighter-background{
+    background: linear-gradient($gradient-color-hover);
+}
+
+%imposing-omber{
+    box-shadow: $bottom__omber-hover;
+}
+
+%overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
@@ -184,10 +212,7 @@ $img__height: 326px;
    margin:$space-between-column;
     @extend %darken-background;
     @extend %neutral-link;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-overflow: "...";
+    @extend %overflow;
     list-style-type: decimal;
     font-size: 0.9em;
 
@@ -259,8 +284,21 @@ $img__height: 326px;
 @mixin design-menu__part__choice {
     @extend %design-block;
     @extend %padding-top-bottom;
+    @extend %overflow;
     background-color: $white;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start:1;
+    grid-row-end: 3;
     
+    
+}
+
+@mixin checkbox-style {
+    background-color: $color__tertiary;
+    z-index: -1;
+    @extend %flex-align-center;
+
 }
 
 @mixin menu-img {
@@ -347,6 +385,10 @@ body{
     background-color: $darken__background;
 }
 
+.grid{
+    @extend %grid;
+}
+
 a{
     @extend %neutral-link;
 }
@@ -358,9 +400,22 @@ ul{
 h3{
     margin: 0;
 }
+.heart-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100px; height: 46px;
+    
+}
+
 .like__button{
-    padding: 0 10px;
-    ;
+    cursor: pointer;
+    background-image: url("/images/heart-regular.png");
+    display: flex;
+    width: 30px; height: 30px;
+   
+  
+
 }
 
  .header__logo{
@@ -369,13 +424,18 @@ h3{
     margin: 3% 30%;
     
 }
-.rows{
+.space-between{
     @extend %space-between-side;
+}
+
+.rows{
+    @extend %rows;
 }
 
 .space-card{
     @extend %space-between-side;
     @extend %flex-align-center;
+    height: 46px;
 
 }
 
@@ -416,6 +476,13 @@ h3{
 
         .discover__button{
             @include design-discover__button;
+            
+            &:hover{
+               @extend %lighter-background;
+               @extend %imposing-omber;
+                
+        
+            }
         }
         
     }
@@ -541,6 +608,30 @@ h3{
             padding: 0 0 5px 0;
         }
         @include design-menu__part__choice;
+        
+        & .overflow{
+            @extend %overflow;
+
+        }
+
+        .checkbox-style{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include checkbox-style;
+            z-index: 2;
+            
+        }
+
+
+        :hover{
+            .checkbox{
+                @include checkbox-style;
+                display: block;
+                z-index: 2;
+            
+            }
+        }
     }
 
     .bold{
@@ -553,6 +644,13 @@ h3{
 
         .button__order{
         @include design-order__button;
+        
+        &:hover{
+            @extend %lighter-background;
+            @extend %imposing-omber;  
+     
+         }
+
         }
     }
 
