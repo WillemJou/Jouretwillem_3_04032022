@@ -91,6 +91,14 @@ $img__height: 326px;
     color: black;   
 }
 
+%background-transition{
+    transition: background 1s;
+}
+
+%opacity-transition{
+    transition: opacity 1s;
+}
+
 %pattern-png{
     width: $icon__little-width;
     padding: $icon__padd; 
@@ -118,6 +126,8 @@ $img__height: 326px;
     background: linear-gradient($gradient-color);
     color: $white;
     cursor: pointer; 
+    font-size: 1em;
+
 }
 
 %position-relative{
@@ -149,6 +159,10 @@ $img__height: 326px;
     flex-direction: column;  
 }
 
+%position-absolute{
+    position: absolute;
+}
+
 %rows{
     display: flex;
 }
@@ -178,7 +192,15 @@ $img__height: 326px;
     text-overflow: ellipsis;
 }
 
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
 
+    100%{
+        transform: rotate(360deg);
+    }
+}
 
 @mixin heart-pattern {
     width: $icon__big-width; height: $icon__big-height;
@@ -188,7 +210,7 @@ $img__height: 326px;
 
 
 @mixin discover__layout {
-    padding-bottom: 15% ;
+    padding-bottom: 10% ;
     @extend %darken-background;
     
 }
@@ -198,6 +220,7 @@ $img__height: 326px;
     border: none;
     font-weight: $bold-font;
     padding: $localisation__padd;
+    font-size: 1em;
     
 }
 
@@ -211,14 +234,13 @@ $img__height: 326px;
    margin:$space-between-column;
     @extend %darken-background;
     @extend %neutral-link;
-    @extend %overflow;
-    list-style-type: decimal;
-    font-size: 0.9em;
+    font-size: 1em;
 
 }
 
 @mixin design-functionning__li--hover {
      background-color: hsla(267, 66%, 60%, 0.274);
+     @extend %background-transition;
 }
 
 @mixin design-discover__button {
@@ -240,7 +262,7 @@ $img__height: 326px;
     padding: $padd;
     position: absolute;
     border-radius: $new-radius;
-    bottom: 79%; right: 3%;
+    bottom: 83%; right: 3%;
    text-align: center;
    text-overflow: ellipsis;
 }
@@ -258,11 +280,6 @@ $img__height: 326px;
     border-radius: $radius;  
 }
 
-
-@mixin design-ol {
-    background-color: #9356DC;
-    
-}
 
 @mixin style-img__card{
     @extend %width-img; height: $img__height;
@@ -356,7 +373,15 @@ $img__height: 326px;
 .functionning__list__png{
     width: $icon__functionning-width;
     padding: $icon__padd;
+    position: absolute;
 }
+
+.functionning__list__png--hover{
+    width: $icon__functionning-width;
+    padding: $icon__padd;
+    
+}
+
 .card__png__like{
     @include heart-pattern;
 }
@@ -426,13 +451,12 @@ h3{
         position: absolute;
         display: flex;
         width: 30px; height: 30px;
-
     }
 
  .header__logo{
     display: block;
-    width: 40%;
-    margin: 3% 30%;
+    width: 50%;
+    margin: 3% 26%;
     
 }
 .space-between{
@@ -491,7 +515,8 @@ h3{
             &:hover{
                @extend %lighter-background;
                @extend %imposing-omber;
-                
+               transition: box-shadow 1s;
+
         
             }
         }
@@ -504,14 +529,45 @@ h3{
     @extend %padding-side;
 
     .functionning__list{
+
+        margin: 50px 0;
+        list-style-type: none;
+        counter-reset: list;
         
+        li:before{
+            counter-increment: list;
+            content: counter(list);
+            position: absolute;
+            left: 85px;
+            @extend %flex-center;
+            color: $white;
+            width: 30px; height: 30px;
+            border-radius: 80%;
+            background-color: $color__primary;
+        }
         .functionning__list__li{
+
             @include design-functionning__li;
             font-weight: $bold-font;
         }
         .functionning__list__li:hover{
-            @include design-functionning__li--hover
+
+            @include design-functionning__li--hover;
+            
+            .functionning__list__png{
+                opacity: 0;
+                @extend %opacity-transition;
+                }
+            .functionning__list__png--hover{
+                @extend %opacity-transition;
+                opacity: 1;
+                        
+                    
+                    
+                
+            }
         }
+
     }
 }
 
@@ -526,8 +582,10 @@ h3{
         & :hover{
             .like__button{
             opacity: 0;
+            transition: opacity 1s;
             }
             .like__button--hover{
+                transition: opacity 1s;
                 opacity: 1;
                     }
         }
@@ -634,7 +692,7 @@ h3{
             }
 
             .checkbox{
-                transform: rotate(360deg); 
+                animation: rotate 0.5s; 
             }
         
         }
