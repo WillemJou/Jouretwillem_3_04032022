@@ -26,8 +26,9 @@
   color: #225e4f;
 }
 
-.menu .bold {
+.menu .price {
   font-weight: bold;
+  padding-right: 15px;
 }
 
 .functionning .functionning__list .functionning__list__li, .menu .menu__part__choice {
@@ -75,7 +76,7 @@ a, .functionning .functionning__list .functionning__list__li {
   width: 100%;
 }
 
-.research .localisation, .header-menu, .menu .title__menu__layout, .menu .center, .menu .center .button__order {
+.research .localisation, .header-menu, .menu .title__menu__layout, .menu .menu__part__choice .around-checkbox, .menu .center, .menu .center .button__order {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -87,7 +88,7 @@ a, .functionning .functionning__list .functionning__list__li {
           justify-content: center;
 }
 
-.space-card, .menu .menu__part__choice .checkbox-style, .menu .menu__part__choice :hover .checkbox {
+.space-card, .menu .menu__part__choice, .menu .menu__part__choice .glue, .menu .menu__part__choice .checkbox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -112,22 +113,22 @@ a, .functionning .functionning__list .functionning__list__li {
           flex-direction: column;
 }
 
-.grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 50% 50%;
-      grid-template-rows: 50% 50%;
-  -ms-grid-columns: 60% 25% 15%;
-      grid-template-columns: 60% 25% 15%;
-}
-
 .rows {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.space-between, .space-card {
+.space-between, .menu .menu__part__choice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.space-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -212,7 +213,17 @@ h3 {
 
 .like__button {
   cursor: pointer;
-  background-image: url("/images/heart-regular.png");
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30px;
+  height: 30px;
+}
+
+.like__button--hover {
+  cursor: pointer;
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -292,6 +303,14 @@ h3 {
 #home-restaurants .card {
   border-radius: 15px;
   margin: 50px 0;
+}
+
+#home-restaurants .card :hover .like__button {
+  opacity: 0;
+}
+
+#home-restaurants .card :hover .like__button--hover {
+  opacity: 1;
 }
 
 #home-restaurants .card .card__img {
@@ -377,38 +396,53 @@ h3 {
 
 .menu .menu__part__choice {
   background-color: white;
-  -ms-grid-column: 1;
-      grid-column-start: 1;
-  grid-column-end: 4;
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-  grid-row-end: 3;
+  padding: 0 0 0 15px;
 }
 
 .menu .menu__part__choice h3 {
   padding: 0 0 5px 0;
 }
 
-.menu .menu__part__choice .checkbox-style {
+.menu .menu__part__choice:hover .around-checkbox {
+  width: 70px;
+}
+
+.menu .menu__part__choice:hover .checkbox {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.menu .menu__part__choice .checkbox {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.menu .menu__part__choice .glue {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #99E2D0;
-  z-index: -1;
-  z-index: 2;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-.menu .menu__part__choice :hover .checkbox {
+.menu .menu__part__choice .around-checkbox {
   background-color: #99E2D0;
-  z-index: -1;
-  display: block;
-  z-index: 2;
+  width: 70px;
+  height: 77px;
+  width: 0;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.menu .menu__part__choice .checkbox {
+  background-color: #99E2D0;
+  width: 35%;
+  height: 30%;
+  -webkit-transition: -webkit-transform 0.5s ease-out 0.1s;
+  transition: -webkit-transform 0.5s ease-out 0.1s;
+  transition: transform 0.5s ease-out 0.1s;
+  transition: transform 0.5s ease-out 0.1s, -webkit-transform 0.5s ease-out 0.1s;
 }
 
 .menu .center {
