@@ -72,8 +72,12 @@ $img__height: 326px;
 
 %color__text-new{ 
     color: $color__text-new;
-
 }
+
+%linear-gradient{
+    background: $gradient-color;
+}
+    
 
 %price{
     font-weight: bold;
@@ -91,8 +95,9 @@ $img__height: 326px;
     color: black;   
 }
 
+
 %background-transition{
-    transition: background 1s;
+    transition: background 0.5s;
 }
 
 %opacity-transition{
@@ -102,6 +107,7 @@ $img__height: 326px;
 %pattern-png{
     width: $icon__little-width;
     padding: $icon__padd; 
+    
 }
 
 %padding-top-bottom{
@@ -167,9 +173,20 @@ $img__height: 326px;
     display: flex;
 }
 
+%functionning__list__png{
+    width: $icon__functionning-width;
+    padding: $icon__padd;
+}
+
+
 %space-between{
     display: flex;
     justify-content: space-between;
+}
+
+%footer__png{
+    width:$icon__functionning-width;
+    padding-right: $padd;
 }
 
 %space-between-side{
@@ -367,19 +384,24 @@ $img__height: 326px;
 }
 
 
-.localisation__png{
+.fa-location-dot{
     @extend %pattern-png;
-}
-.functionning__list__png{
-    width: $icon__functionning-width;
-    padding: $icon__padd;
-    position: absolute;
+    
 }
 
-.functionning__list__png--hover{
-    width: $icon__functionning-width;
-    padding: $icon__padd;
-    
+.fa-mobile-screen-button{
+   @extend %functionning__list__png;
+   @extend %background-transition;
+}
+
+.fa-list{
+    @extend %functionning__list__png;
+    @extend %background-transition;
+}
+
+.fa-store{
+    @extend %functionning__list__png;
+    @extend %background-transition;
 }
 
 .card__png__like{
@@ -393,10 +415,12 @@ $img__height: 326px;
 .card__png__{
     @extend %pattern-png;
 }
-.footer__png{
-    width:$icon__functionning-width;
-    padding-right: $padd;
-   
+.fa-utensils{
+    @extend %footer__png;
+}
+
+.fa-handshake-angle{
+    @extend %footer__png;
 }
 
 .png__return{
@@ -439,19 +463,16 @@ h3{
     
 }
 
-.like__button{
+.fa-heart{
         cursor: pointer;
-        position: absolute;
-        display: flex;
-        width: 30px; height: 30px;
-    }
+        font-size: 33px;
+        background-image: linear-gradient(blue red);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
         
- .like__button--hover{
-        cursor: pointer;
-        position: absolute;
-        display: flex;
-        width: 30px; height: 30px;
     }
+
 
  .header__logo{
     display: block;
@@ -554,18 +575,11 @@ h3{
 
             @include design-functionning__li--hover;
             
-            .functionning__list__png{
-                opacity: 0;
-                @extend %opacity-transition;
-                }
-            .functionning__list__png--hover{
-                @extend %opacity-transition;
-                opacity: 1;
-                        
-                    
-                    
+            .fa-list, .fa-mobile-screen-button, .fa-store{
+                color: $color__primary;
+            }   
                 
-            }
+
         }
 
     }
@@ -579,17 +593,6 @@ h3{
 
         @include card;
 
-        & :hover{
-            .like__button{
-            opacity: 0;
-            transition: opacity 1s;
-            }
-            .like__button--hover{
-                transition: opacity 1s;
-                opacity: 1;
-                    }
-        }
-    
         
         .card__img{
             
@@ -603,16 +606,38 @@ h3{
 
         .card__cartel{
             @include card-cartel;
-           
+
+            .space-card{
+                
+            & :hover{
+
+                .fa-regular{
+                    
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                        
+                }
+
+    
+            }
+
+            }
+
         }
+    
 
         .card__city{
             @include card-city;
         }
 
+
     }
 
+
 }
+
+
 
 .footer__layout{
 

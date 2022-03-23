@@ -43,17 +43,12 @@ a, .functionning .functionning__list .functionning__list__li {
   color: black;
 }
 
-.functionning .functionning__list .functionning__list__li:hover {
-  -webkit-transition: background 1s;
-  transition: background 1s;
+.fa-mobile-screen-button, .fa-list, .fa-store, .functionning .functionning__list .functionning__list__li:hover {
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
 }
 
-.functionning .functionning__list .functionning__list__li:hover .functionning__list__png, .functionning .functionning__list .functionning__list__li:hover .functionning__list__png--hover {
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
-}
-
-.localisation__png, .card__png__ {
+.fa-location-dot, .card__png__ {
   width: 10px;
   padding: 0 20px;
 }
@@ -130,6 +125,11 @@ a, .functionning .functionning__list .functionning__list__li {
   display: flex;
 }
 
+.fa-mobile-screen-button, .fa-list, .fa-store {
+  width: 15px;
+  padding: 0 20px;
+}
+
 .space-between, .menu .menu__part__choice {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -137,6 +137,11 @@ a, .functionning .functionning__list .functionning__list__li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.fa-utensils, .fa-handshake-angle {
+  width: 15px;
+  padding-right: 15px;
 }
 
 .space-card {
@@ -187,17 +192,6 @@ a, .functionning .functionning__list .functionning__list__li {
   }
 }
 
-.functionning__list__png {
-  width: 15px;
-  padding: 0 20px;
-  position: absolute;
-}
-
-.functionning__list__png--hover {
-  width: 15px;
-  padding: 0 20px;
-}
-
 .card__png__like {
   width: 42px;
   height: 45px;
@@ -207,11 +201,6 @@ a, .functionning .functionning__list .functionning__list__li {
 .card__png__menu__like {
   width: 42px;
   padding: 0 20px;
-}
-
-.footer__png {
-  width: 15px;
-  padding-right: 15px;
 }
 
 .png__return {
@@ -250,24 +239,14 @@ h3 {
   height: 46px;
 }
 
-.like__button {
+.fa-heart {
   cursor: pointer;
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 30px;
-  height: 30px;
-}
-
-.like__button--hover {
-  cursor: pointer;
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 30px;
-  height: 30px;
+  font-size: 33px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(red, blue));
+  background-image: linear-gradient(blue red);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .header__logo {
@@ -364,29 +343,13 @@ h3 {
   background-color: rgba(146, 86, 220, 0.274);
 }
 
-.functionning .functionning__list .functionning__list__li:hover .functionning__list__png {
-  opacity: 0;
-}
-
-.functionning .functionning__list .functionning__list__li:hover .functionning__list__png--hover {
-  opacity: 1;
+.functionning .functionning__list .functionning__list__li:hover .fa-list, .functionning .functionning__list .functionning__list__li:hover .fa-mobile-screen-button, .functionning .functionning__list .functionning__list__li:hover .fa-store {
+  color: #9356DC;
 }
 
 #home-restaurants .card {
   border-radius: 15px;
   margin: 50px 0;
-}
-
-#home-restaurants .card :hover .like__button {
-  opacity: 0;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
-}
-
-#home-restaurants .card :hover .like__button--hover {
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
-  opacity: 1;
 }
 
 #home-restaurants .card .card__img {
@@ -409,6 +372,12 @@ h3 {
 #home-restaurants .card .card__cartel {
   margin-left: 15px;
   border-radius: 15px;
+}
+
+#home-restaurants .card .card__cartel .space-card :hover .fa-regular {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #home-restaurants .card .card__city {
