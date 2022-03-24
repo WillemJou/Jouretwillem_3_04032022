@@ -43,6 +43,7 @@ $icon__functionning-width: 15px;
 $icon__return: 22px;
 $img__width: 100%;
 $img__height: 326px;
+$heart-width: 33px;
 
 
 
@@ -70,6 +71,10 @@ $img__height: 326px;
     background-color: $darken__background;
 }
 
+%heart-width{
+    font-size: 33px;
+}
+
 %color__text-new{ 
     color: $color__text-new;
 }
@@ -93,6 +98,10 @@ $img__height: 326px;
 %neutral-link {
     text-decoration: none;
     color: black;   
+}
+
+%pointer{
+    cursor: pointer;
 }
 
 
@@ -209,6 +218,11 @@ $img__height: 326px;
     text-overflow: ellipsis;
 }
 
+%png__return{
+    width: $icon__return;
+    padding: $padd;
+}
+
 @keyframes rotate {
     0%{
         transform: rotate(0deg);
@@ -263,6 +277,7 @@ $img__height: 326px;
 @mixin design-discover__button {
     padding: $padd;
     @extend %design-button;
+    @extend %pointer;
 }
 
 
@@ -270,6 +285,7 @@ $img__height: 326px;
     @extend %design-button;
     @extend %flex-center;
     padding: $padding-button__order;
+    @extend %pointer;
     
 }
 
@@ -334,7 +350,8 @@ $img__height: 326px;
 @mixin checkbox-style {
     @extend %flex-align-center;
     background-color: $color__tertiary;
-    width: 35%; height: 30%;    
+    width: 35%; height: 30%;   
+    color: white; 
 }
 
 @mixin menu-img {
@@ -423,9 +440,8 @@ $img__height: 326px;
     @extend %footer__png;
 }
 
-.png__return{
-    width: $icon__return;
-    padding: $padd;
+.fa-solid fa-arrow-left{
+  @extend %png__return;
 }
 
 
@@ -463,16 +479,26 @@ h3{
     
 }
 
-.fa-heart{
-        cursor: pointer;
-        font-size: 33px;
-        background-image: linear-gradient(blue red);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        
-    }
+.heart-container .fa-regular:before{
+    position: absolute;
+    @extend %pointer;
+    @extend %heart-width;
+    z-index: 2;
+    top: 20px; right: 35px;
+}
 
+.heart-container .fa-solid:before{
+    position: absolute;
+    @extend %pointer;
+    @extend %heart-width;
+    background: -webkit-gradient(linear, left top, left bottom, from($color__primary), to($color__secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;  
+    visibility: hidden;
+    top: 20px; right: 35px;
+    }
+   
 
  .header__logo{
     display: block;
@@ -480,6 +506,7 @@ h3{
     margin: 3% 26%;
     
 }
+
 .space-between{
     @extend %space-between;
 }
@@ -611,12 +638,14 @@ h3{
                 
             & :hover{
 
-                .fa-regular{
-                    
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                        
+                .fa-regular::before{
+                    z-index: 0;
+                }
+
+                .fa-solid::before{
+                    visibility: visible;
+                    z-index: 1;
+
                 }
 
     
@@ -691,6 +720,7 @@ h3{
     
     .menu__title{
         @extend %secondary-font;
+
     }
 
     .menu__part{
@@ -716,8 +746,9 @@ h3{
                 width: 70px;
             }
 
-            .checkbox{
+            .fa-circle-check::before{
                 animation: rotate 0.5s; 
+                position: sticky;
             }
         
         }
@@ -737,11 +768,15 @@ h3{
             @include around-checkbox;
             width: 0; 
             transition: width 0.5s;
+            overflow: hidden; 
         }
 
-        .checkbox{
+        .fa-circle-check::before{
            @include checkbox-style;
            transition: transform 0.5s ease-out 0.1s;
+          
+        
+         
         }
 
         

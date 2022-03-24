@@ -22,6 +22,10 @@
   background-color: #f2f2f2;
 }
 
+.heart-container .fa-regular:before, .heart-container .fa-solid:before {
+  font-size: 33px;
+}
+
 #home-restaurants .card .new, .menu .menu__part__title {
   color: #225e4f;
 }
@@ -41,6 +45,10 @@
 a, .functionning .functionning__list .functionning__list__li {
   text-decoration: none;
   color: black;
+}
+
+.heart-container .fa-regular:before, .heart-container .fa-solid:before, .research .discover .discover__button, .menu .center .button__order {
+  cursor: pointer;
 }
 
 .fa-mobile-screen-button, .fa-list, .fa-store, .functionning .functionning__list .functionning__list__li:hover {
@@ -94,7 +102,7 @@ a, .functionning .functionning__list .functionning__list__li {
           justify-content: center;
 }
 
-.space-card, .menu .menu__part__choice, .menu .menu__part__choice .glue, .menu .menu__part__choice .checkbox {
+.space-card, .menu .menu__part__choice, .menu .menu__part__choice .glue, .menu .menu__part__choice .fa-circle-check::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -170,6 +178,11 @@ a, .functionning .functionning__list .functionning__list__li {
   text-overflow: ellipsis;
 }
 
+.fa-solid fa-arrow-left {
+  width: 22px;
+  padding: 15px;
+}
+
 @-webkit-keyframes rotate {
   0% {
     -webkit-transform: rotate(0deg);
@@ -203,11 +216,6 @@ a, .functionning .functionning__list .functionning__list__li {
   padding: 0 20px;
 }
 
-.png__return {
-  width: 22px;
-  padding: 15px;
-}
-
 body {
   margin: 0;
   font-family: 'Roboto';
@@ -239,14 +247,22 @@ h3 {
   height: 46px;
 }
 
-.fa-heart {
-  cursor: pointer;
-  font-size: 33px;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(red, blue));
-  background-image: linear-gradient(blue red);
+.heart-container .fa-regular:before {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  right: 35px;
+}
+
+.heart-container .fa-solid:before {
+  position: absolute;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
   background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
+  visibility: hidden;
+  top: 20px;
+  right: 35px;
 }
 
 .header__logo {
@@ -374,10 +390,13 @@ h3 {
   border-radius: 15px;
 }
 
-#home-restaurants .card .card__cartel .space-card :hover .fa-regular {
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+#home-restaurants .card .card__cartel .space-card :hover .fa-regular::before {
+  z-index: 0;
+}
+
+#home-restaurants .card .card__cartel .space-card :hover .fa-solid::before {
+  visibility: visible;
+  z-index: 1;
 }
 
 #home-restaurants .card .card__city {
@@ -452,9 +471,11 @@ h3 {
   width: 70px;
 }
 
-.menu .menu__part__choice:hover .checkbox {
+.menu .menu__part__choice:hover .fa-circle-check::before {
   -webkit-animation: rotate 0.5s;
           animation: rotate 0.5s;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 .menu .menu__part__choice .glue {
@@ -473,12 +494,14 @@ h3 {
   width: 0;
   -webkit-transition: width 0.5s;
   transition: width 0.5s;
+  overflow: hidden;
 }
 
-.menu .menu__part__choice .checkbox {
+.menu .menu__part__choice .fa-circle-check::before {
   background-color: #99E2D0;
   width: 35%;
   height: 30%;
+  color: white;
   -webkit-transition: -webkit-transform 0.5s ease-out 0.1s;
   transition: -webkit-transform 0.5s ease-out 0.1s;
   transition: transform 0.5s ease-out 0.1s;
