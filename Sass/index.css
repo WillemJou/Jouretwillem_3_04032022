@@ -22,7 +22,7 @@
   background-color: #f2f2f2;
 }
 
-.heart-container .fa-regular:before, .heart-container .fa-solid:before {
+.fa-arrow-left::before, .heart-container .fa-regular:before, .heart-container .fa-solid:before, .title__menu__layout .fa-regular:before, .title__menu__layout .fa-solid:before, .menu .title__menu__layout .fa-regular::before {
   font-size: 33px;
 }
 
@@ -47,13 +47,18 @@ a, .functionning .functionning__list .functionning__list__li {
   color: black;
 }
 
-.heart-container .fa-regular:before, .heart-container .fa-solid:before, .research .discover .discover__button, .menu .center .button__order {
+.heart-container .fa-regular:before, .heart-container .fa-solid:before, .title__menu__layout .fa-regular:before, .title__menu__layout .fa-solid:before, .research .discover .discover__button, .menu .center .button__order {
   cursor: pointer;
 }
 
-.fa-mobile-screen-button, .fa-list, .fa-store, .functionning .functionning__list .functionning__list__li:hover {
-  -webkit-transition: background 0.5s;
-  transition: background 0.5s;
+.fa-mobile-screen-button, .fa-list, .fa-store {
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.functionning .functionning__list .functionning__list__li, .functionning .functionning__list .functionning__list__li:hover {
+  -webkit-transition: background-color 0.8s;
+  transition: background-color 0.8s;
 }
 
 .fa-location-dot, .card__png__ {
@@ -80,6 +85,12 @@ a, .functionning .functionning__list .functionning__list__li {
   color: white;
   cursor: pointer;
   font-size: 1em;
+  -webkit-transition: background 0.8s;
+  transition: background 0.8s;
+  -webkit-transition: -webkit-box-shadow 1s;
+  transition: -webkit-box-shadow 1s;
+  transition: box-shadow 1s;
+  transition: box-shadow 1s, -webkit-box-shadow 1s;
 }
 
 #home-restaurants .card {
@@ -90,7 +101,7 @@ a, .functionning .functionning__list .functionning__list__li {
   width: 100%;
 }
 
-.research .localisation, .functionning .functionning__list li:before, .header-menu, .menu .title__menu__layout, .menu .menu__part__choice .around-checkbox, .menu .center, .menu .center .button__order {
+.research .localisation, .functionning .functionning__list li:before, .header-menu, .menu .menu__part__choice .around-checkbox, .menu .center, .menu .center .button__order {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -100,6 +111,10 @@ a, .functionning .functionning__list .functionning__list__li {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.functionning .functionning__list .functionning__list__li:hover {
+  background-color: rgba(146, 86, 220, 0.274);
 }
 
 .space-card, .menu .menu__part__choice, .menu .menu__part__choice .glue, .menu .menu__part__choice .fa-circle-check::before {
@@ -127,7 +142,7 @@ a, .functionning .functionning__list .functionning__list__li {
           flex-direction: column;
 }
 
-.rows {
+.rows, .menu .title__menu__layout {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,22 +180,23 @@ a, .functionning .functionning__list .functionning__list__li {
 .research .discover .discover__button:hover, .menu .center .button__order:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 143, 223, 0.993)), to(#9250e2));
   background: linear-gradient(rgba(255, 143, 223, 0.993), #9250e2);
+  -webkit-transition: background 0.8s;
+  transition: background 0.8s;
 }
 
 .research .discover .discover__button:hover, .menu .center .button__order:hover {
   -webkit-box-shadow: 6px 6px 10px #aaa;
           box-shadow: 6px 6px 10px #aaa;
+  -webkit-transition: -webkit-box-shadow 1s;
+  transition: -webkit-box-shadow 1s;
+  transition: box-shadow 1s;
+  transition: box-shadow 1s, -webkit-box-shadow 1s;
 }
 
 .menu .menu__part__choice, .menu .menu__part__choice .overflow {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.fa-solid fa-arrow-left {
-  width: 22px;
-  padding: 15px;
 }
 
 @-webkit-keyframes rotate {
@@ -202,6 +218,100 @@ a, .functionning .functionning__list .functionning__list__li {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes unveiling {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes unveiling {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes set-up {
+  from {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  to {
+    -webkit-transform: transformY(0);
+            transform: transformY(0);
+  }
+}
+
+@keyframes set-up {
+  from {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  to {
+    -webkit-transform: transformY(0);
+            transform: transformY(0);
   }
 }
 
@@ -265,6 +375,24 @@ h3 {
   right: 35px;
 }
 
+.title__menu__layout .fa-regular:before {
+  position: absolute;
+  z-index: 1;
+  top: 8px;
+  right: 35px;
+}
+
+.title__menu__layout .fa-solid:before {
+  position: absolute;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  visibility: hidden;
+  top: 23px;
+  right: 50px;
+}
+
 .header__logo {
   display: block;
   width: 50%;
@@ -322,6 +450,10 @@ h3 {
 
 .research .discover .discover__button {
   padding: 15px;
+  -webkit-transition: -webkit-box-shadow 1s;
+  transition: -webkit-box-shadow 1s;
+  transition: box-shadow 1s;
+  transition: box-shadow 1s, -webkit-box-shadow 1s;
 }
 
 .research .discover .discover__button:hover {
@@ -329,6 +461,8 @@ h3 {
   transition: -webkit-box-shadow 1s;
   transition: box-shadow 1s;
   transition: box-shadow 1s, -webkit-box-shadow 1s;
+  -webkit-transition: background 0.8s;
+  transition: background 0.8s;
 }
 
 .functionning .functionning__list {
@@ -357,10 +491,14 @@ h3 {
 
 .functionning .functionning__list .functionning__list__li:hover {
   background-color: rgba(146, 86, 220, 0.274);
+  -webkit-transition: background-color 0.8s;
+  transition: background-color 0.8s;
 }
 
 .functionning .functionning__list .functionning__list__li:hover .fa-list, .functionning .functionning__list .functionning__list__li:hover .fa-mobile-screen-button, .functionning .functionning__list .functionning__list__li:hover .fa-store {
   color: #9356DC;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
 }
 
 #home-restaurants .card {
@@ -444,9 +582,35 @@ h3 {
   bottom: 70px;
 }
 
+.menu .title__menu__layout {
+  padding: 0 10%;
+}
+
+.menu .title__menu__layout .fa-regular::before {
+  padding: 15px;
+}
+
+.menu .title__menu__layout :hover .fa-regular::before {
+  z-index: 0;
+}
+
+.menu .title__menu__layout :hover .fa-solid::before {
+  visibility: visible;
+  -webkit-transition: visibility 1s;
+  transition: visibility 1s;
+  z-index: 1;
+}
+
 .menu .menu__part {
   padding: 0 20px;
   margin: 0;
+  -webkit-animation: 4s set-up;
+          animation: 4s set-up;
+}
+
+.menu .entree, .menu .meal, .menu .dessert {
+  -webkit-animation: 3s unveiling;
+          animation: 3s unveiling;
 }
 
 .menu .menu__part__title {
@@ -474,8 +638,6 @@ h3 {
 .menu .menu__part__choice:hover .fa-circle-check::before {
   -webkit-animation: rotate 0.5s;
           animation: rotate 0.5s;
-  position: -webkit-sticky;
-  position: sticky;
 }
 
 .menu .menu__part__choice .glue {
@@ -514,5 +676,11 @@ h3 {
 
 .menu .center .button__order {
   padding: 15px 45px;
+  -webkit-transition: -webkit-box-shadow 1s;
+  transition: -webkit-box-shadow 1s;
+  transition: box-shadow 1s;
+  transition: box-shadow 1s, -webkit-box-shadow 1s;
+  -webkit-transition: background 0.8s;
+  transition: background 0.8s;
 }
 /*# sourceMappingURL=index.css.map */

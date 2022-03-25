@@ -3,6 +3,7 @@ $color__secondary:#FF79DA;
 $color__tertiary: #99E2D0;
 $darken__background:hsl(0, 0%, 95%);
 $localisation__background__color: hsla(283, 6%, 77%, 0.411);
+$color-functionning__list--hover: hsla(267, 66%, 60%, 0.274);
 $color__text-new: hsl(165, 47%, 25%);
 
 
@@ -20,6 +21,7 @@ $padding-button__order: 15px 45px;
 $icon__padd: 0 20px;
 $localisation__padd: 3% 2%;
 $padding-side: 5%; 
+$padding-menu-title: 0 10%;
 $padding-left-card__cartel: 15px;
 $padding-top-bottom: 15px 0;
 $padding-bottom: 19px;
@@ -75,6 +77,8 @@ $heart-width: 33px;
     font-size: 33px;
 }
 
+
+
 %color__text-new{ 
     color: $color__text-new;
 }
@@ -105,8 +109,14 @@ $heart-width: 33px;
 }
 
 
-%background-transition{
-    transition: background 0.5s;
+%color-transition{
+    transition: color 0.5s;
+    
+}
+
+%background-color-transition{
+    transition: background-color 0.8s;
+    
 }
 
 %opacity-transition{
@@ -142,6 +152,8 @@ $heart-width: 33px;
     color: $white;
     cursor: pointer; 
     font-size: 1em;
+    transition: background 0.8s;
+    transition: box-shadow 1s;
 
 }
 
@@ -163,6 +175,11 @@ $heart-width: 33px;
     justify-content: center;
     
 }
+
+%color-functionning--hover{
+    background-color: $color-functionning__list--hover;
+}
+
 %flex-align-center{
     display: flex;
     align-items: center;
@@ -206,10 +223,12 @@ $heart-width: 33px;
 
 %lighter-background{
     background: linear-gradient($gradient-color-hover);
+    transition: background 0.8s;
 }
 
 %imposing-omber{
     box-shadow: $bottom__omber-hover;
+    transition: box-shadow 1s;
 }
 
 %overflow {
@@ -232,6 +251,58 @@ $heart-width: 33px;
         transform: rotate(360deg);
     }
 }
+
+@keyframes unveiling {
+    0%{
+       opacity: 0;
+    }
+    10%{
+        opacity: 0.1;
+    }
+    20%{
+        opacity: 0.2;
+    }
+    30%{
+        opacity: 0.3;
+    }
+    40%{
+        opacity: 0.4;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    60%{
+        opacity: 0.6;
+    }
+    70%{
+        opacity: 0.7;
+    }
+    80%{
+            opacity: 0.8;
+    }
+    90%{
+        opacity: 0.9;
+    }
+    100%{
+       opacity: 1;
+    }
+}
+
+@keyframes set-up{
+    
+    from{
+        transform: translateY(20px);
+    }
+    
+    to{
+        transform: transformY(0);
+    }
+   
+}
+
+
+
+
 
 @mixin heart-pattern {
     width: $icon__big-width; height: $icon__big-height;
@@ -266,18 +337,20 @@ $heart-width: 33px;
     @extend %darken-background;
     @extend %neutral-link;
     font-size: 1em;
-
+    @extend %background-color-transition;
 }
 
 @mixin design-functionning__li--hover {
-     background-color: hsla(267, 66%, 60%, 0.274);
-     @extend %background-transition;
+     @extend %color-functionning--hover;
+     @extend %background-color-transition;
 }
 
 @mixin design-discover__button {
     padding: $padd;
     @extend %design-button;
     @extend %pointer;
+    transition: box-shadow 1s;
+
 }
 
 
@@ -286,6 +359,8 @@ $heart-width: 33px;
     @extend %flex-center;
     padding: $padding-button__order;
     @extend %pointer;
+    transition: box-shadow 1s;
+    transition: background 0.8s;
     
 }
 
@@ -331,6 +406,7 @@ $heart-width: 33px;
 }
 
 @mixin design-menu__part__choice {
+
     @extend %design-block;
     @extend %flex-align-center;
     @extend %padding-top-bottom;
@@ -345,6 +421,14 @@ $heart-width: 33px;
     width: 70px; height: 77px;
     @extend %flex-center;
 
+}
+
+@mixin title__menu__layout {
+
+    @extend %rows;
+    padding: $padding-menu-title;
+
+    
 }
 
 @mixin checkbox-style {
@@ -408,17 +492,17 @@ $heart-width: 33px;
 
 .fa-mobile-screen-button{
    @extend %functionning__list__png;
-   @extend %background-transition;
+   @extend %color-transition;
 }
 
 .fa-list{
     @extend %functionning__list__png;
-    @extend %background-transition;
+    @extend %color-transition;
 }
 
 .fa-store{
     @extend %functionning__list__png;
-    @extend %background-transition;
+    @extend %color-transition;
 }
 
 .card__png__like{
@@ -440,12 +524,9 @@ $heart-width: 33px;
     @extend %footer__png;
 }
 
-.fa-solid fa-arrow-left{
-  @extend %png__return;
+.fa-arrow-left::before{
+  @extend %heart-width;
 }
-
-
-
 
 
 
@@ -498,6 +579,26 @@ h3{
     visibility: hidden;
     top: 20px; right: 35px;
     }
+
+    .title__menu__layout .fa-regular:before{
+        position: absolute;
+        @extend %pointer;
+        @extend %heart-width;
+        z-index: 1;
+        top: 8px; right: 35px;
+    }
+    
+    .title__menu__layout .fa-solid:before{
+        position: absolute;
+        @extend %pointer;
+        @extend %heart-width;
+        background: -webkit-gradient(linear, left top, left bottom, from($color__primary), to($color__secondary));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color:transparent;  
+        visibility: hidden;
+        top: 23px; right: 50px;
+        }
    
 
  .header__logo{
@@ -564,8 +665,8 @@ h3{
                @extend %lighter-background;
                @extend %imposing-omber;
                transition: box-shadow 1s;
-
-        
+               transition: background 0.8s;
+            
             }
         }
         
@@ -601,9 +702,12 @@ h3{
         .functionning__list__li:hover{
 
             @include design-functionning__li--hover;
+            background-color: $color-functionning__list--hover;
+            transition: background-color 0.8s;
             
             .fa-list, .fa-mobile-screen-button, .fa-store{
                 color: $color__primary;
+                transition: color 0.4s;
             }   
                 
 
@@ -715,7 +819,30 @@ h3{
 
     .title__menu__layout{
 
-    @extend %flex-center;
+    @include title__menu__layout;
+
+    .fa-regular::before{
+        @extend %heart-width;
+        padding: $padd;
+    }
+
+    & :hover{
+
+        .fa-regular::before{
+            z-index: 0;
+        }
+
+        .fa-solid::before{
+            visibility: visible;
+            transition: visibility 1s;
+            z-index: 1;
+
+        }
+
+
+    }
+
+
     }
     
     .menu__title{
@@ -725,10 +852,18 @@ h3{
 
     .menu__part{
         @include layout-menu__part;
+        animation: 4s set-up;
+
     }
 
+    .entree, .meal, .dessert{
+
+    animation: 3s unveiling;
+
+    
+    }
     .menu__part__title{
-        @include design-menu__part__title
+        @include design-menu__part__title;
         
     }
 
@@ -736,7 +871,10 @@ h3{
         @include line;
     }
 
-    .menu__part__choice{
+    .menu__part__choice {
+    
+    
+
         h3{
             padding: 0 0 5px 0;
         }
@@ -748,7 +886,7 @@ h3{
 
             .fa-circle-check::before{
                 animation: rotate 0.5s; 
-                position: sticky;
+                
             }
         
         }
