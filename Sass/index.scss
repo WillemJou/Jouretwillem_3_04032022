@@ -366,13 +366,13 @@ h3{
 
     .menu__part{
         @include layout-menu__part;
-        animation: 4s set-up;
+        animation: 10s set-up;
 
     }
 
     .entree, .meal, .dessert{
 
-    animation: 3s unveiling;
+    animation: 40s unveiling;
 
     
     }
