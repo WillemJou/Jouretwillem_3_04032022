@@ -1,489 +1,3 @@
-$color__primary: #9356DC;
-$color__secondary:#FF79DA;
-$color__tertiary: #99E2D0;
-$darken__background:hsl(0, 0%, 95%);
-$localisation__background__color: hsla(283, 6%, 77%, 0.411);
-$color-functionning__list--hover: hsla(267, 66%, 60%, 0.274);
-$color__text-new: hsl(165, 47%, 25%);
-
-
-$gradient-color: #ff7ad9,#9256dc;
-$gradient-color-hover:hsla(317, 100%, 78%, 0.993),hsl(267, 72%, 60%);
-
-$bold-font: 600;
-$white:white;
-
-$bottom__omber: 2px 2px 7px #aaa;
-$bottom__omber-hover: 6px 6px 10px #aaa;
-
-$padd: 15px;
-$padding-button__order: 15px 45px;
-$icon__padd: 0 20px;
-$localisation__padd: 3% 2%;
-$padding-side: 5%; 
-$padding-menu-title: 0 10%;
-$padding-left-card__cartel: 15px;
-$padding-top-bottom: 15px 0;
-$padding-bottom: 19px;
-$padding-title: 15px 0 5px 0;
-$padding-title__footer: 15px 0 0 15px;
-$padding-big: 50px 40px 0 40px;
-$padding-heart: 15px 5% 0 0;
-
-
-
-$space-between-column: 20px;
-
-$discover__button__radius: 45px;
-$radius: 15px;
-$new-radius: 5px;
-
-$icon__little-width: 10px;
-$icon__big-width: 42px;
-$icon__big-height: 45px;
-$icon__functionning-width: 15px;
-$icon__return: 22px;
-$img__width: 100%;
-$img__height: 326px;
-$heart-width: 33px;
-
-
-
-%primary-font {
-    font-family: 'Roboto';  
-}
-
-%secondary-font{
-    font-family: 'Shrikhand';
-}
-
-%padding-side{
-    padding: $padding-side;
-}
-
-%padding-top-bottom{
-    padding: $padding-top-bottom;
-}
-
-%white-background{
-    background-color: white;
-}
-
-%darken-background{
-    background-color: $darken__background;
-}
-
-%heart-width{
-    font-size: 33px;
-}
-
-
-
-%color__text-new{ 
-    color: $color__text-new;
-}
-
-%linear-gradient{
-    background: $gradient-color;
-}
-    
-
-%price{
-    font-weight: bold;
-    padding-right: $padd;
-}
-
-%design-block{
-    box-shadow: $bottom__omber;
-    padding: $padd;
-    border-radius: $radius;
-}
-
-%neutral-link {
-    text-decoration: none;
-    color: black;   
-}
-
-%pointer{
-    cursor: pointer;
-}
-
-
-%color-transition{
-    transition: color 0.5s;
-    
-}
-
-%background-color-transition{
-    transition: background-color 0.8s;
-    
-}
-
-%opacity-transition{
-    transition: opacity 1s;
-}
-
-%pattern-png{
-    width: $icon__little-width;
-    padding: $icon__padd; 
-    
-}
-
-%padding-top-bottom{
-    margin: $padding-top-bottom;
-}
-
-%top-radius {
-    border-top-left-radius: $radius;
-    border-top-right-radius: $radius;
-}
-
-%flex-align-up {
-    display: flex;
-    align-items: flex-start;
-
-}
-
-%design-button{
-    border-radius: $discover__button__radius;
-    box-shadow: $bottom__omber;
-    border: none;
-    background: linear-gradient($gradient-color);
-    color: $white;
-    cursor: pointer; 
-    font-size: 1em;
-    transition: background 0.8s;
-    transition: box-shadow 1s;
-
-}
-
-%position-relative{
-    position: relative;
-}
-
-%position-absolute{
-    position: absolute;
-}
-
-%width-img{
-    width: $img__width;
-}
-
-%flex-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-%color-functionning--hover{
-    background-color: $color-functionning__list--hover;
-}
-
-%flex-align-center{
-    display: flex;
-    align-items: center;
-}
-%flex-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;  
-}
-
-%position-absolute{
-    position: absolute;
-}
-
-%rows{
-    display: flex;
-}
-
-%functionning__list__png{
-    width: $icon__functionning-width;
-    padding: $icon__padd;
-}
-
-
-%space-between{
-    display: flex;
-    justify-content: space-between;
-}
-
-%footer__png{
-    width:$icon__functionning-width;
-    padding-right: $padd;
-}
-
-%space-between-side{
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-}
-
-%lighter-background{
-    background: linear-gradient($gradient-color-hover);
-    transition: background 0.8s;
-}
-
-%imposing-omber{
-    box-shadow: $bottom__omber-hover;
-    transition: box-shadow 1s;
-}
-
-%overflow {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-%png__return{
-    width: $icon__return;
-    padding: $padd;
-}
-
-@keyframes rotate {
-    0%{
-        transform: rotate(0deg);
-    }
-
-    100%{
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes unveiling {
-    0%{
-       opacity: 0;
-    }
-    10%{
-        opacity: 0.1;
-    }
-    20%{
-        opacity: 0.2;
-    }
-    30%{
-        opacity: 0.3;
-    }
-    40%{
-        opacity: 0.4;
-    }
-    50%{
-        opacity: 0.5;
-    }
-    60%{
-        opacity: 0.6;
-    }
-    70%{
-        opacity: 0.7;
-    }
-    80%{
-            opacity: 0.8;
-    }
-    90%{
-        opacity: 0.9;
-    }
-    100%{
-       opacity: 1;
-    }
-}
-
-@keyframes set-up{
-    
-    from{
-        transform: translateY(20px);
-    }
-    
-    to{
-        transform: transformY(0);
-    }
-   
-}
-
-
-
-
-
-@mixin heart-pattern {
-    width: $icon__big-width; height: $icon__big-height;
-    padding: $padding-heart;
-
-}
-
-
-@mixin discover__layout {
-    padding-bottom: 10% ;
-    @extend %darken-background;
-    
-}
-
-@mixin localisation__bar {
-    background-color: transparent;
-    border: none;
-    font-weight: $bold-font;
-    padding: $localisation__padd;
-    font-size: 1em;
-    
-}
-
-@mixin text-alignment {
-    text-align: center;
-    
-}
-
-@mixin design-functionning__li{
-   @extend %design-block;
-   margin:$space-between-column;
-    @extend %darken-background;
-    @extend %neutral-link;
-    font-size: 1em;
-    @extend %background-color-transition;
-}
-
-@mixin design-functionning__li--hover {
-     @extend %color-functionning--hover;
-     @extend %background-color-transition;
-}
-
-@mixin design-discover__button {
-    padding: $padd;
-    @extend %design-button;
-    @extend %pointer;
-    transition: box-shadow 1s;
-
-}
-
-
-@mixin design-order__button {
-    @extend %design-button;
-    @extend %flex-center;
-    padding: $padding-button__order;
-    @extend %pointer;
-    transition: box-shadow 1s;
-    transition: background 0.8s;
-    
-}
-
-@mixin new{
-    background-color: $color__tertiary;
-    @extend %color__text-new;
-    padding: $padd;
-    position: absolute;
-    border-radius: $new-radius;
-    bottom: 83%; right: 3%;
-   text-align: center;
-   text-overflow: ellipsis;
-}
-
-@mixin card{
-    border-radius: $radius;
-    @extend %white-background;
-    margin: 50px 0;
-    @extend %position-relative;
-
-}
-
-@mixin card-cartel {
-    margin-left: $padding-left-card__cartel;  
-    border-radius: $radius;  
-}
-
-
-@mixin style-img__card{
-    @extend %width-img; height: $img__height;
-    object-fit: cover;
-    @extend %top-radius;
-    
-    
-}
-
-@mixin menu-style {
-    @extend %darken-background;
-    @extend %top-radius;
-    position: relative;
-    bottom: 70px;
-    
-}
-
-@mixin design-menu__part__choice {
-
-    @extend %design-block;
-    @extend %flex-align-center;
-    @extend %padding-top-bottom;
-    @extend %overflow;
-    @extend %space-between;
-    background-color: $white;
-    padding: 0 0 0 15px;
-}
-
-@mixin around-checkbox {
-    background-color: $color__tertiary;
-    width: 70px; height: 77px;
-    @extend %flex-center;
-
-}
-
-@mixin title__menu__layout {
-
-    @extend %rows;
-    padding: $padding-menu-title;
-
-    
-}
-
-@mixin checkbox-style {
-    @extend %flex-align-center;
-    background-color: $color__tertiary;
-    width: 35%; height: 30%;   
-    color: white; 
-}
-
-@mixin menu-img {
-    @extend %width-img; height:$img__height;
-    position: relative;
-    
-}
-
-@mixin design-menu__part__title{
-    @extend %color__text-new;
-    font-weight: 400; 
-   
-}
-
-@mixin center {
-    @extend %flex-center;
-    padding: $padding-big;
-      
-}
-
-@mixin glue {
-    @extend %flex-align-center;
-    display: flex;
-    justify-content: flex-end;
-    
-}
-
-@mixin layout-menu__part {
-    padding: $icon__padd;
-    margin: 0;
-}
-
-@mixin line {
-    border-bottom: solid 3px $color__tertiary;
-    width: 45px;
-}
-
-@mixin card-city {
-    padding-bottom: $padding-bottom;
-    
-}
-@mixin footer {
-    background-color: hsl(0, 3%, 19%);
-    color: $white;
-    padding: $padding-bottom;
-    
-}
-
 
 .fa-location-dot{
     @extend %pattern-png;
@@ -564,7 +78,8 @@ h3{
     position: absolute;
     @extend %pointer;
     @extend %heart-width;
-    z-index: 2;
+    opacity: 1;
+    transition: opacity 1s;
     top: 20px; right: 35px;
 }
 
@@ -577,6 +92,8 @@ h3{
     -webkit-background-clip: text;
     -webkit-text-fill-color:transparent;  
     visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
     top: 20px; right: 35px;
     }
 
@@ -584,8 +101,10 @@ h3{
         position: absolute;
         @extend %pointer;
         @extend %heart-width;
-        z-index: 1;
+       opacity: 1;
+        transition: opacity 1s;
         top: 8px; right: 35px;
+        
     }
     
     .title__menu__layout .fa-solid:before{
@@ -597,6 +116,8 @@ h3{
         -webkit-background-clip: text;
         -webkit-text-fill-color:transparent;  
         visibility: hidden;
+        opacity: 0;
+        transition: opacity 1s;
         top: 23px; right: 50px;
         }
    
@@ -661,11 +182,11 @@ h3{
         .discover__button{
             @include design-discover__button;
             
+            
             &:hover{
                @extend %lighter-background;
                @extend %imposing-omber;
-               transition: box-shadow 1s;
-               transition: background 0.8s;
+               
             
             }
         }
@@ -680,6 +201,7 @@ h3{
     .functionning__list{
 
         margin: 50px 0;
+        position: relative;
         list-style-type: none;
         counter-reset: list;
         
@@ -687,7 +209,8 @@ h3{
             counter-increment: list;
             content: counter(list);
             position: absolute;
-            left: 85px;
+            left: 40px;
+            
             @extend %flex-center;
             color: $white;
             width: 30px; height: 30px;
@@ -743,18 +266,14 @@ h3{
             & :hover{
 
                 .fa-regular::before{
-                    z-index: 0;
+                   opacity: 0;
                 }
 
                 .fa-solid::before{
                     visibility: visible;
-                    z-index: 1;
-
+                    opacity: 1;   
                 }
-
-    
             }
-
             }
 
         }
@@ -829,19 +348,14 @@ h3{
     & :hover{
 
         .fa-regular::before{
-            z-index: 0;
+            opacity: 0;
         }
 
         .fa-solid::before{
             visibility: visible;
-            transition: visibility 1s;
-            z-index: 1;
-
+            opacity: 1;
         }
-
-
     }
-
 
     }
     
@@ -872,6 +386,12 @@ h3{
     }
 
     .menu__part__choice {
+
+        .column{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
     
     
 
@@ -906,7 +426,7 @@ h3{
             @include around-checkbox;
             width: 0; 
             transition: width 0.5s;
-            overflow: hidden; 
+            overflow: hidden;   
         }
 
         .fa-circle-check::before{
@@ -932,9 +452,12 @@ h3{
         .button__order{
         @include design-order__button;
         
+        
         &:hover{
             @extend %lighter-background;
-            @extend %imposing-omber;  
+            @extend %imposing-omber; 
+            transition: box-shadow 2s;
+            transition: background 2s; 
      
          }
 

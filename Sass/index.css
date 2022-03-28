@@ -85,12 +85,6 @@ a, .functionning .functionning__list .functionning__list__li {
   color: white;
   cursor: pointer;
   font-size: 1em;
-  -webkit-transition: background 0.8s;
-  transition: background 0.8s;
-  -webkit-transition: -webkit-box-shadow 1s;
-  transition: -webkit-box-shadow 1s;
-  transition: box-shadow 1s;
-  transition: box-shadow 1s, -webkit-box-shadow 1s;
 }
 
 #home-restaurants .card {
@@ -180,17 +174,11 @@ a, .functionning .functionning__list .functionning__list__li {
 .research .discover .discover__button:hover, .menu .center .button__order:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 143, 223, 0.993)), to(#9250e2));
   background: linear-gradient(rgba(255, 143, 223, 0.993), #9250e2);
-  -webkit-transition: background 0.8s;
-  transition: background 0.8s;
 }
 
 .research .discover .discover__button:hover, .menu .center .button__order:hover {
   -webkit-box-shadow: 6px 6px 10px #aaa;
           box-shadow: 6px 6px 10px #aaa;
-  -webkit-transition: -webkit-box-shadow 1s;
-  transition: -webkit-box-shadow 1s;
-  transition: box-shadow 1s;
-  transition: box-shadow 1s, -webkit-box-shadow 1s;
 }
 
 .menu .menu__part__choice, .menu .menu__part__choice .overflow {
@@ -359,7 +347,9 @@ h3 {
 
 .heart-container .fa-regular:before {
   position: absolute;
-  z-index: 2;
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
   top: 20px;
   right: 35px;
 }
@@ -371,13 +361,18 @@ h3 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
   top: 20px;
   right: 35px;
 }
 
 .title__menu__layout .fa-regular:before {
   position: absolute;
-  z-index: 1;
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
   top: 8px;
   right: 35px;
 }
@@ -389,6 +384,9 @@ h3 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
   top: 23px;
   right: 50px;
 }
@@ -412,6 +410,7 @@ h3 {
 .research .localisation .localisation__bar {
   background-color: transparent;
   border: none;
+  outline: none;
   font-weight: 600;
   padding: 3% 2%;
   font-size: 1em;
@@ -454,19 +453,13 @@ h3 {
   transition: -webkit-box-shadow 1s;
   transition: box-shadow 1s;
   transition: box-shadow 1s, -webkit-box-shadow 1s;
-}
-
-.research .discover .discover__button:hover {
-  -webkit-transition: -webkit-box-shadow 1s;
-  transition: -webkit-box-shadow 1s;
-  transition: box-shadow 1s;
-  transition: box-shadow 1s, -webkit-box-shadow 1s;
-  -webkit-transition: background 0.8s;
-  transition: background 0.8s;
+  -webkit-transition: background 1s;
+  transition: background 1s;
 }
 
 .functionning .functionning__list {
   margin: 50px 0;
+  position: relative;
   list-style-type: none;
   counter-reset: list;
 }
@@ -475,7 +468,7 @@ h3 {
   counter-increment: list;
   content: counter(list);
   position: absolute;
-  left: 85px;
+  left: 40px;
   color: white;
   width: 30px;
   height: 30px;
@@ -529,12 +522,12 @@ h3 {
 }
 
 #home-restaurants .card .card__cartel .space-card :hover .fa-regular::before {
-  z-index: 0;
+  opacity: 0;
 }
 
 #home-restaurants .card .card__cartel .space-card :hover .fa-solid::before {
   visibility: visible;
-  z-index: 1;
+  opacity: 1;
 }
 
 #home-restaurants .card .card__city {
@@ -591,14 +584,12 @@ h3 {
 }
 
 .menu .title__menu__layout :hover .fa-regular::before {
-  z-index: 0;
+  opacity: 0;
 }
 
 .menu .title__menu__layout :hover .fa-solid::before {
   visibility: visible;
-  -webkit-transition: visibility 1s;
-  transition: visibility 1s;
-  z-index: 1;
+  opacity: 1;
 }
 
 .menu .menu__part {
@@ -625,6 +616,12 @@ h3 {
 .menu .menu__part__choice {
   background-color: white;
   padding: 0 0 0 15px;
+}
+
+.menu .menu__part__choice .column {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .menu .menu__part__choice h3 {
@@ -661,8 +658,7 @@ h3 {
 
 .menu .menu__part__choice .fa-circle-check::before {
   background-color: #99E2D0;
-  width: 35%;
-  height: 30%;
+  font-size: 25px;
   color: white;
   -webkit-transition: -webkit-transform 0.5s ease-out 0.1s;
   transition: -webkit-transform 0.5s ease-out 0.1s;
@@ -675,12 +671,19 @@ h3 {
 }
 
 .menu .center .button__order {
-  padding: 15px 45px;
   -webkit-transition: -webkit-box-shadow 1s;
   transition: -webkit-box-shadow 1s;
   transition: box-shadow 1s;
   transition: box-shadow 1s, -webkit-box-shadow 1s;
-  -webkit-transition: background 0.8s;
-  transition: background 0.8s;
+  padding: 15px 45px;
+}
+
+.menu .center .button__order:hover {
+  -webkit-transition: -webkit-box-shadow 2s;
+  transition: -webkit-box-shadow 2s;
+  transition: box-shadow 2s;
+  transition: box-shadow 2s, -webkit-box-shadow 2s;
+  -webkit-transition: background 2s;
+  transition: background 2s;
 }
 /*# sourceMappingURL=index.css.map */
