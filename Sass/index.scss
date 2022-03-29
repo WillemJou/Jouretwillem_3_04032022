@@ -1,3 +1,8 @@
+@import 'mixins' ;
+@import 'variables';
+@import 'keyframes';
+@import 'extensions';
+
 
 .fa-location-dot{
     @extend %pattern-png;
@@ -330,6 +335,7 @@ h3{
 
 .menu__img{
     @include menu-img;
+    object-fit: cover;
 }
 
 .menu{
@@ -372,7 +378,7 @@ h3{
 
     .entree, .meal, .dessert{
 
-    animation: 40s unveiling;
+    animation: 20s unveiling;
 
     
     }
@@ -466,5 +472,56 @@ h3{
 
 }
 
+
+@media screen and (min-width: 1024px){
+
+.research{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.discover{
+    padding-bottom: 3% !important;
+}
+
+h1 {
+    margin-top: 3% !important;
+    font-size: 2rem;
+    text-align: center;
+}
+
+p{
+    margin-bottom: 3% !important;
+}
+
+
+ .functionning__list{
+
+     display: flex;
+     justify-content: center !important;
+     align-content: center !important;
+     align-items: center !important;
+   }
+
+    
+
+.grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    width: 97%;
+    gap: 3%;
+}
+
+.card{
+    margin: 50px 0 0 0 !important;
+}
+   
+#home-restaurants{
+    padding: 5% 5% 10% 5% !important;
+}
+}
+
+
+    
 
 

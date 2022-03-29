@@ -89,8 +89,6 @@
     @extend %width-img; height: $img__height;
     object-fit: cover;
     @extend %top-radius;
-    
-    
 }
 
 @mixin menu-style {
@@ -137,6 +135,7 @@
 @mixin menu-img {
     @extend %width-img; height:$img__height;
     position: relative;
+    object-fit: cover;
     
 }
 
