@@ -22,6 +22,15 @@
     
 }
 
+@mixin contact__bar {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-weight: $bold-font;
+    padding: $localisation__padd;
+    font-size: 1em;
+    
+}
 @mixin text-alignment {
     text-align: center;
     
@@ -117,10 +126,16 @@
 
 }
 
+@mixin title-contact-layout {
+    padding: 5% 0 1% 5%;
+    margin: 5% 0 0 5%;
+    
+}
+
 @mixin title__menu__layout {
 
     @extend %rows;
-    padding: $padding-menu-title;
+    @extend %padding-title;
 
     
 }
@@ -167,6 +182,13 @@
     border-bottom: solid 3px $color__tertiary;
     width: 45px;
 }
+
+@mixin contact-line{
+    border-bottom: solid 3px $color__tertiary;
+    width: 200px;
+
+}
+
 
 @mixin card-city {
     padding-bottom: $padding-bottom;
