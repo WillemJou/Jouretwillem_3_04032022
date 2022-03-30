@@ -524,6 +524,10 @@ h3 {
   padding-left: 15px;
 }
 
+.main__contact {
+  height: 47vh;
+}
+
 .align-contact {
   display: -webkit-box;
   display: -ms-flexbox;

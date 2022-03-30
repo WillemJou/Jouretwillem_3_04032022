@@ -1,205 +1,183 @@
-
 @mixin heart-pattern {
-    width: $icon__big-width; height: $icon__big-height;
-    padding: $padding-heart;
-
+  width: $icon__big-width;
+  height: $icon__big-height;
+  padding: $padding-heart;
 }
 
-
 @mixin discover__layout {
-    padding-bottom: 10% ;
-    @extend %darken-background;
-    
+  padding-bottom: 10%;
+  @extend %darken-background;
 }
 
 @mixin localisation__bar {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    font-weight: $bold-font;
-    padding: $localisation__padd;
-    font-size: 1em;
-    
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-weight: $bold-font;
+  padding: $localisation__padd;
+  font-size: 1em;
 }
 
 @mixin contact__bar {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    font-weight: $bold-font;
-    padding: $localisation__padd;
-    font-size: 1em;
-    width: 75%;
-    
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-weight: $bold-font;
+  padding: $localisation__padd;
+  font-size: 1em;
+  width: 75%;
 }
 @mixin text-alignment {
-    text-align: center;
-    
+  text-align: center;
 }
 
-@mixin design-functionning__li{
-   @extend %design-block;
-   margin:$space-between-column;
-    @extend %darken-background;
-    @extend %neutral-link;
-    font-size: 1em;
-    @extend %background-color-transition;
+@mixin design-functionning__li {
+  @extend %design-block;
+  margin: $space-between-column;
+  @extend %darken-background;
+  @extend %neutral-link;
+  font-size: 1em;
+  @extend %background-color-transition;
 }
 
 @mixin design-functionning__li--hover {
-     @extend %color-functionning--hover;
-     @extend %background-color-transition;
+  @extend %color-functionning--hover;
+  @extend %background-color-transition;
 }
 
 @mixin design-discover__button {
-    padding: $padd;
-    @extend %design-button;
-    @extend %pointer;
-    transition: box-shadow 1s;
-    transition: background 1s;
-
-
+  padding: $padd;
+  @extend %design-button;
+  @extend %pointer;
+  transition: box-shadow 1s;
+  transition: background 1s;
 }
-
 
 @mixin design-order__button {
-    @extend %design-button;
-    @extend %flex-center;
-    transition: box-shadow 1s;
-    padding: $padding-button__order;
-    @extend %pointer;  
+  @extend %design-button;
+  @extend %flex-center;
+  transition: box-shadow 1s;
+  padding: $padding-button__order;
+  @extend %pointer;
 }
 
-@mixin new{
-    background-color: $color__tertiary;
-    @extend %color__text-new;
-    padding: $padd;
-    position: absolute;
-    border-radius: $new-radius;
-    bottom: 83%; right: 3%;
-   text-align: center;
-   text-overflow: ellipsis;
+@mixin new {
+  background-color: $color__tertiary;
+  @extend %color__text-new;
+  padding: $padd;
+  position: absolute;
+  border-radius: $new-radius;
+  bottom: 83%;
+  right: 3%;
+  text-align: center;
+  text-overflow: ellipsis;
 }
 
-@mixin card{
-    width: 100%;
-    height: auto;
-    border-radius: $radius;
-    @extend %white-background;
-    margin: 50px 0;
-    @extend %position-relative;
-
+@mixin card {
+  width: 100%;
+  height: auto;
+  border-radius: $radius;
+  @extend %white-background;
+  margin: 50px 0;
+  @extend %position-relative;
 }
 
 @mixin card-cartel {
-    margin-left: $padding-left-card__cartel;  
-    border-radius: $radius;  
+  margin-left: $padding-left-card__cartel;
+  border-radius: $radius;
 }
 
-
-@mixin style-img__card{
-    @extend %width-img; height: auto;
-    object-fit: cover;
-    @extend %top-radius;
+@mixin style-img__card {
+  @extend %width-img;
+  height: auto;
+  object-fit: cover;
+  @extend %top-radius;
 }
 
 @mixin menu-style {
-    @extend %darken-background;
-    @extend %top-radius;
-    position: relative;
-    bottom: 70px;
-    
+  @extend %darken-background;
+  @extend %top-radius;
+  position: relative;
+  bottom: 70px;
 }
 
 @mixin design-menu__part__choice {
-
-    @extend %design-block;
-    @extend %flex-align-center;
-    @extend %padding-top-bottom;
-    @extend %overflow;
-    @extend %space-between;
-    background-color: $white;
-    padding: 0 0 0 15px;
+  @extend %design-block;
+  @extend %flex-align-center;
+  @extend %padding-top-bottom;
+  @extend %overflow;
+  @extend %space-between;
+  background-color: $white;
+  padding: 0 0 0 15px;
 }
 
 @mixin around-checkbox {
-    background-color: $color__tertiary;
-    width: 70px; height: 77px;
-    @extend %flex-center;
-
+  background-color: $color__tertiary;
+  width: 70px;
+  height: 77px;
+  @extend %flex-center;
 }
 
 @mixin title-contact-layout {
-    padding: 5% 0 1% 5%;
-    margin: 5% 0 0 5%;
-    
+  padding: 5% 0 1% 5%;
+  margin: 5% 0 0 5%;
 }
 
 @mixin title__menu__layout {
-
-    @extend %rows;
-    @extend %padding-title;
-
-    
+  @extend %rows;
+  @extend %padding-title;
 }
 
 @mixin checkbox-style {
-    @extend %flex-align-center;
-    background-color: $color__tertiary;
-   font-size: 25px;  
-    color: white; 
+  @extend %flex-align-center;
+  background-color: $color__tertiary;
+  font-size: 25px;
+  color: white;
 }
 
 @mixin menu-img {
-    @extend %width-img; height:$img__height;
-    position: relative;
-    object-fit: cover;
-    
+  @extend %width-img;
+  height: $img__height;
+  position: relative;
+  object-fit: cover;
 }
 
-@mixin design-menu__part__title{
-    @extend %color__text-new;
-    font-weight: 400; 
-   
+@mixin design-menu__part__title {
+  @extend %color__text-new;
+  font-weight: 400;
 }
 
 @mixin center {
-    @extend %flex-center;
-    padding: $padding-big;
-      
+  @extend %flex-center;
+  padding: $padding-big;
 }
 
 @mixin glue {
-    @extend %flex-align-center;
-    display: flex;
-    justify-content: flex-end;
-    
+  @extend %flex-align-center;
+  display: flex;
+  justify-content: flex-end;
 }
 
 @mixin layout-menu__part {
-    padding: $icon__padd;
-    margin: 0;
+  padding: $icon__padd;
+  margin: 0;
 }
 
 @mixin line {
-    border-bottom: solid 3px $color__tertiary;
-    width: 45px;
+  border-bottom: solid 3px $color__tertiary;
+  width: 45px;
 }
 
-@mixin contact-line{
-    border-bottom: solid 3px $color__tertiary;
-    width: 52px;
-
+@mixin contact-line {
+  border-bottom: solid 3px $color__tertiary;
+  width: 52px;
 }
-
 
 @mixin card-city {
-    padding-bottom: $padding-bottom;
-    
+  padding-bottom: $padding-bottom;
 }
 @mixin footer {
-    background-color: hsl(0, 3%, 19%);
-    color: $white;
-    padding: $padding-bottom;
-    
+  background-color: hsl(0, 3%, 19%);
+  color: $white;
+  padding: $padding-bottom;
 }
