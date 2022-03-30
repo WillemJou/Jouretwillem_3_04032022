@@ -44,7 +44,7 @@
 }
 
 .fa-arrow-left::before{
-  @extend %heart-width;
+  font-size: 2rem;
 }
 
 
@@ -201,6 +201,8 @@ h3{
 }
 .functionning{
 
+   
+
     @extend %padding-side;
 
     .functionning__list{
@@ -223,6 +225,11 @@ h3{
             background-color: $color__primary;
         }
         .functionning__list__li{
+
+            .layout-li{
+                display: flex;
+                align-items: center;
+            }
 
             @include design-functionning__li;
             font-weight: $bold-font;
@@ -320,8 +327,11 @@ h3{
 
 }
 
+
+
 .main__contact{
     @extend %darken-background;
+   
 }
 .align-contact{
     display: flex;
@@ -330,7 +340,8 @@ h3{
     margin-left: 8%;
 
 .title-contact{
-    margin-bottom: 1%;
+    text-align: justify;
+    margin-bottom: 0;
 }
 
 .align{
@@ -338,18 +349,24 @@ h3{
     flex-direction: column;
     @extend %darken-background;
 
-
     .contact-line{
-        @include line;
+        @include contact-line;
     }
 
 
 .contact{
     width: 70%;
-    margin: 3% 10% 10% 0;
+    @extend %white-background;
+    margin: 10% 10% 10% 0;
     color: $color__primary;
     @extend %price;
     @extend %design-block;
+    padding: 0 !important;
+
+    .arobase{
+        padding-left: $padd;
+        font-size: 25px;
+    }
     .contact__bar{
         @include contact__bar;
     }
@@ -511,21 +528,141 @@ h3{
 
 }
 
+@media screen and (min-width: 740px) and (max-width: 1024px) {
+    .header__logo{
+        width: 25%;
+        margin: 3%;
+    }
+
+    .research{
+        display: flex;
+        flex-direction: column;
+    }
+    .discover{
+        padding-bottom: 3% !important;
+        flex-direction: row !important;
+        justify-content: space-evenly !important; 
+    }
+    
+    .localisation__bar{
+        padding: $padd !important;
+    }
+    
+    .display-tablet{
+        display: flex;
+        background-color: $darken__background;
+        padding-bottom: 5%;
+    }
+    h1 {
+        margin-top: 0 !important;
+        font-size: 2.3rem;
+        padding-top: 5%;
+        margin-bottom: 0;
+    }
+    
+    p{
+        margin-bottom: 3% !important;
+    }
+    
+    .line-restaurants-desk{
+        border-bottom: solid 3px $color__tertiary !important;
+        position: absolute;
+        width: 203px !important;
+        left: 55%;    }
+    
+    .line-fonctionnement-desk{
+        border-bottom: solid 3px $color__tertiary !important;
+        position: absolute;
+        width: 265px !important;
+    }
+    
+    .functionning{
+        padding: 2% !important;
+        background-color: $darken__background;
+    }
+    
+    
+     .functionning__list{
+    
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-start;
+         align-content: center !important;
+         align-items: center !important;
+         margin: 15px 0 10px 0 !important;
+         padding-left: 0;
+    
+         .functionning__list__li{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            background-color: $white !important;
+         }
+    
+         .functionning__list__li::before{
+             position: relative !important;
+            left: 0 !important;
+         }    
+     }
+
+     .restaurant-title{
+         padding-top: 18px;
+         text-align: center;
+     }
+     .card{
+         margin: 35px 0 0 0 !important;
+         width: 94% !important;
+        
+     }
+
+     .new{
+         padding: 6px !important;
+     }
+
+     #home-restaurants{
+         padding: 2%;
+    
+     }
+
+     .grid{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        width: 97%;
+        gap: 3%;
+    }
+
+}
+
 
 @media screen and (min-width: 1024px){
 
+    .header__logo{
+        width: 25%;
+        margin: 3% 38%;
+    }
+
 .research{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 .discover{
     padding-bottom: 3% !important;
+    flex-direction: row !important;
+ 
+    
+ 
+}
+
+.localisation__bar{
+    padding: $padd !important;
 }
 
 h1 {
     margin-top: 0 !important;
     font-size: 2.3rem;
-    padding-top: 5%;
+    padding-top: 2%;
     text-align: center;
     margin-bottom: 0;
 }
@@ -536,16 +673,23 @@ p{
 
 .line-restaurants-desk{
     border-bottom: solid 3px $color__tertiary !important;
-    position: absolute;
-    left: 40%;
     width: 203px !important;
 }
 
 .line-fonctionnement-desk{
     border-bottom: solid 3px $color__tertiary !important;
-    position: absolute;
-    left: 37%;
     width: 265px !important;
+}
+
+.align-line{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.functionning{
+    padding: 2% !important;
+    background-color: $darken__background !important;
 }
 
 
@@ -555,6 +699,7 @@ p{
      justify-content: center !important;
      align-content: center !important;
      align-items: center !important;
+     margin: 15px 0 10px 0 !important;
 
      .functionning__list__li{
         display: flex;
@@ -572,18 +717,20 @@ p{
 
 .grid{
     display: grid;
+    margin-top: 18px;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
-    width: 97%;
-    gap: 3%;
+    width: 103%;
+    row-gap: 3%; column-gap: 0%;
 }
 
 .card{
-    margin: 50px 0 0 0 !important;
+    margin: 20px 0 0 0 !important;
+    width: 90% !important;
 }
    
 #home-restaurants{
-    padding: 0 5% 10% 5% !important;
+    padding:2% 5% 10% 5% !important;
 }
 }
 
