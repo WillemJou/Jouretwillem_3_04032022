@@ -1,0 +1,42 @@
+.fa-location-dot {
+    @extend %pattern-png;
+  }
+  
+  .fa-mobile-screen-button {
+    @extend %functionning__list__png;
+    @extend %color-transition;
+  }
+  
+  .fa-list {
+    @extend %functionning__list__png;
+    @extend %color-transition;
+  }
+  
+  .fa-store {
+    @extend %functionning__list__png;
+    @extend %color-transition;
+  }
+  
+  .card__png__like {
+    @include heart-pattern;
+  }
+  
+  .card__png__menu__like {
+    width: $icon__big-width;
+    padding: $icon__padd;
+  }
+  .card__png__ {
+    @extend %pattern-png;
+  }
+  .fa-utensils {
+    @extend %footer__png;
+  }
+  
+  .fa-handshake-angle {
+    @extend %footer__png;
+  }
+  
+  .fa-arrow-left::before {
+    font-size: 2rem;
+  }
+  

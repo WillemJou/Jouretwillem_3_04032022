@@ -17,13 +17,41 @@
     opacity: 1;
   }
 }
+@keyframes unveiling-2 {
+  0% {
+    opacity: 0;
+  }
+ 30%{
+   opacity: 0;
+ }
 
-@keyframes set-up {
+ 50%{
+   opacity: 0.3;
+ }
+
+ 70%{
+   opacity: 0.6;
+ }
+
+90%{
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+@keyframes set-up-1 {
   from {
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
 
   to {
     transform: transformY(0);
   }
 }
+

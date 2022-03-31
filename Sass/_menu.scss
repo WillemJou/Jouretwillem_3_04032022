@@ -1,0 +1,217 @@
+@import "home-restaurants";
+
+.main__menu {
+    background-color: $darken__background;
+  }
+
+
+  
+  .menu__img {
+    @include menu-img;
+    object-fit: cover;
+  }
+
+  
+.menu {
+    @include menu-style;
+  
+    .title__menu__layout {
+      @include title__menu__layout;
+  
+      .fa-regular::before {
+        @extend %heart-width;
+        padding: $padd;
+      }
+  
+      & :hover {
+        .fa-regular::before {
+          opacity: 0;
+        }
+  
+        .fa-solid::before {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  
+  
+  
+  
+  
+  
+  .meal {
+    
+    animation: 2s unveiling-2;
+   
+    .animation-container-meal-1{
+     
+      animation: 2s linear set-up-1;
+    }
+    .animation-container-meal-2{
+     
+      animation: 1s linear 0.4s set-up-1;
+    }
+    .animation-container-meal-3{
+    
+      animation: 1s linear 0.5s set-up-1;
+    
+    }
+  }
+  
+  .dessert {
+  
+    animation: 3s unveiling-2;
+  
+    .animation-container-dessert-1{
+     
+      animation: 2s linear set-up-1;
+    }
+    .animation-container-dessert-2{
+     
+      animation: 0.8s linear 1.4s set-up-1;
+    }
+    .animation-container-dessert-3{
+    
+      animation: 1s linear 1.5s set-up-1;
+    
+    }
+  }
+  
+  }
+
+  .title__menu__layout .fa-regular:before {
+    position: absolute;
+    @extend %pointer;
+    @extend %heart-width;
+    opacity: 1;
+    transition: opacity 1s;
+    top: 30px;
+    right: 35px;
+  }
+  
+  .title__menu__layout .fa-solid:before {
+    position: absolute;
+    @extend %pointer;
+    @extend %heart-width;
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from($color__primary),
+      to($color__secondary)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+    top: 45px;
+    right: 50px;
+  
+  .menu__title {
+    @extend %secondary-font;
+  }
+}
+
+  .menu__part {
+    @include layout-menu__part;
+    animation: 5s unveiling;
+
+    
+  .entree{
+    animation: 2s unveiling;
+
+   .animation-container-1{
+    animation: 1.3s linear  set-up-1;
+  }
+  .animation-container-2{
+   
+    animation: 1s linear 0.2s set-up-1;
+  }
+  .animation-container-3{
+  
+    animation: 1s linear 0.3s set-up-1;
+  
+  }
+
+  .menu__part__title {
+    @include design-menu__part__title;
+  }
+
+}
+
+
+
+  .line {
+    @include line;
+  }
+
+  .menu__part__choice {
+    .column {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    h3 {
+      padding: 0 0 5px 0;
+    }
+
+    &:hover {
+      .around-checkbox {
+        width: 70px;
+      }
+
+      .fa-circle-check::before {
+        animation: rotate 0.5s;
+      }
+    }
+
+    @include design-menu__part__choice;
+
+    & .overflow {
+      @extend %overflow;
+    }
+
+    .glue {
+      @include glue;
+    }
+
+    .around-checkbox {
+      @include around-checkbox;
+      width: 0;
+      transition: width 0.5s;
+      overflow: hidden;
+    }
+
+    .fa-circle-check::before {
+      @include checkbox-style;
+      transition: transform 0.5s ease-out 0.1s;
+    }
+  }
+
+  .price {
+    @extend %price;
+  }
+}
+
+
+
+
+  .center {
+    @include center;
+
+    .button__order {
+      @include design-order__button;
+
+      &:hover {
+        @extend %lighter-background;
+        @extend %imposing-omber;
+        transition: box-shadow 2s;
+        transition: background 2s;
+      }
+    }
+  }
+

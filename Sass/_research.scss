@@ -1,0 +1,41 @@
+
+.research {
+    .localisation {
+      box-shadow: 0px -1px 5px #aaa;
+      background-color: $localisation__background__color;
+      @extend %flex-center;
+  
+      .localisation__bar {
+        @extend %primary-font;
+        @include localisation__bar;
+      }
+      ::placeholder {
+        color: black;
+      }
+    }
+  
+    .discover {
+      @extend %flex-column;
+      @include discover__layout;
+  
+      h1 {
+        font-size: 1.5em;
+        margin-top: 10%;
+        @include text-alignment;
+      }
+  
+      p {
+        @include text-alignment;
+        margin-bottom: 8%;
+      }
+  
+      .discover__button {
+        @include design-discover__button;
+  
+        &:hover {
+          @extend %lighter-background;
+          @extend %imposing-omber;
+        }
+      }
+    }
+  }

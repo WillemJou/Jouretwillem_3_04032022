@@ -1,0 +1,49 @@
+@import "variables";
+
+.functionning {
+    @extend %padding-side;
+  
+    .functionning__list {
+      margin: 50px 0;
+      position: relative;
+      list-style-type: none;
+      counter-reset: list;
+      padding: 0;
+  
+      li:before {
+        counter-increment: list;
+        content: counter(list);
+        position: absolute;
+        left: 8px;
+  
+        @extend %flex-center;
+        color: $white;
+        width: 30px;
+        height: 30px;
+        border-radius: 80%;
+        background-color: $color__primary;
+      }
+      .functionning__list__li {
+        .layout-li {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+  
+        @include design-functionning__li;
+        font-weight: $bold-font;
+      }
+      .functionning__list__li:hover {
+        @include design-functionning__li--hover;
+        background-color: $color-functionning__list--hover;
+        transition: background-color 0.8s;
+  
+        .fa-list,
+        .fa-mobile-screen-button,
+        .fa-store {
+          color: $color__primary;
+          transition: color 0.4s;
+        }
+      }
+    }
+  }

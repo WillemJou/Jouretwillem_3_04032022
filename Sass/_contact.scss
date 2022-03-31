@@ -1,0 +1,57 @@
+@import "mixins";
+@import "variables";
+@import "extensions";
+
+
+.main__contact {
+    @extend %darken-background;
+  
+  }
+
+
+  .align-line-contact{
+    display: flex;
+    flex-direction: column;
+    margin: 3% 0 !important;
+    padding-left: 10%;
+  }
+  
+  .align-contact {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+   
+  
+    .title-contact {
+      text-align: justify;
+      margin-bottom: 0;
+    }
+  
+    .align {
+      display: flex;
+      flex-direction: column;
+      @extend %darken-background;
+  
+      .contact-line {
+        @include contact-line;
+      }
+  
+      .contact {
+        width: 70%;
+        @extend %white-background;
+        color: $color__primary;
+        margin: 6% 0 17% 10%;
+        @extend %price;
+        @extend %design-block;
+        padding: 0 !important;
+  
+        .arobase {
+          padding-left: $padd;
+          font-size: 25px;
+        }
+        .contact__bar {
+          @include contact__bar;
+        }
+      }
+    }
+  }

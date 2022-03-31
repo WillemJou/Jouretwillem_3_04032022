@@ -64,7 +64,8 @@
 @mixin new {
   background-color: $color__tertiary;
   @extend %color__text-new;
-  padding: $padd;
+  padding: 3%;
+  font-weight: $bold-font;
   position: absolute;
   border-radius: $new-radius;
   bottom: 83%;
@@ -78,7 +79,7 @@
   height: auto;
   border-radius: $radius;
   @extend %white-background;
-  margin: 50px 0;
+  margin: 8% 0;
   @extend %position-relative;
 }
 

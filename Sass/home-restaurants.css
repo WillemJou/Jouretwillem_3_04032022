@@ -1,0 +1,72 @@
+#home-restaurants {
+  padding: 5%;
+}
+
+#home-restaurants .card {
+  background-color: white;
+}
+
+#home-restaurants {
+  background-color: #f2f2f2;
+}
+
+#home-restaurants .card .new {
+  color: #225e4f;
+}
+
+#home-restaurants .card .card__img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+#home-restaurants .card {
+  position: relative;
+}
+
+#home-restaurants .card .card__img {
+  width: 100%;
+}
+
+#home-restaurants .card {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin: 8% 0;
+}
+
+#home-restaurants .card .card__img {
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#home-restaurants .card .new {
+  background-color: #99e2d0;
+  padding: 3%;
+  font-weight: 600;
+  position: absolute;
+  border-radius: 5px;
+  bottom: 83%;
+  right: 3%;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+#home-restaurants .card .card__cartel {
+  margin-left: 15px;
+  border-radius: 15px;
+}
+
+#home-restaurants .card .card__cartel .space-card :hover .fa-regular::before {
+  opacity: 0;
+}
+
+#home-restaurants .card .card__cartel .space-card :hover .fa-solid::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+#home-restaurants .card .card__city {
+  padding-bottom: 19px;
+}
+/*# sourceMappingURL=home-restaurants.css.map */

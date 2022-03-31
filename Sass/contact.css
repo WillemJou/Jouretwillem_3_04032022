@@ -1,0 +1,86 @@
+.align-contact .align .contact {
+  background-color: white;
+}
+
+.main__contact, .align-contact .align {
+  background-color: #f2f2f2;
+}
+
+.align-contact .align .contact {
+  font-weight: bold;
+  padding-right: 15px;
+}
+
+.align-contact .align .contact {
+  -webkit-box-shadow: 2px 2px 7px #aaa;
+          box-shadow: 2px 2px 7px #aaa;
+  padding: 27px;
+  border-radius: 15px;
+}
+
+.align-line-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 3% 0 !important;
+  padding-left: 10%;
+}
+
+.align-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.align-contact .title-contact {
+  text-align: justify;
+  margin-bottom: 0;
+}
+
+.align-contact .align {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.align-contact .align .contact-line {
+  border-bottom: solid 3px #99e2d0;
+  width: 52px;
+}
+
+.align-contact .align .contact {
+  width: 70%;
+  color: #9356dc;
+  margin: 6% 0 17% 10%;
+  padding: 0 !important;
+}
+
+.align-contact .align .contact .arobase {
+  padding-left: 15px;
+  font-size: 25px;
+}
+
+.align-contact .align .contact .contact__bar {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  padding: 3% 2%;
+  font-size: 1em;
+  width: 75%;
+}
+/*# sourceMappingURL=contact.css.map */

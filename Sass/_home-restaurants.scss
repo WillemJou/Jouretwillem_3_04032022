@@ -1,0 +1,85 @@
+@import "variables";
+@import "mixins";
+@import "extensions";
+
+#home-restaurants {
+    @extend %padding-side;
+    @extend %darken-background;
+  
+    .card {
+      @include card;
+  
+      .card__img {
+        @include style-img__card;
+      }
+  
+      .new {
+        @include new;
+      }
+      
+      .card__cartel {
+        @include card-cartel;
+  
+        .space-card {
+
+          @extend %space-between-side;
+        @extend %flex-align-center;
+        height: 46px;
+
+          .heart-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            width: 100px;
+            height: 46px;
+          }
+          
+          .heart-container .fa-regular:before {
+            position: absolute;
+            @extend %pointer;
+            @extend %heart-width;
+            opacity: 1;
+            transition: opacity 1s;
+            top: 20px;
+            right: 35px;
+          }
+          
+          .heart-container .fa-solid:before {
+            position: absolute;
+            @extend %pointer;
+            @extend %heart-width;
+            background: -webkit-gradient(
+              linear,
+              left top,
+              left bottom,
+              from($color__primary),
+              to($color__secondary)
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 1s;
+            top: 20px;
+            right: 35px;
+          }
+          
+          & :hover {
+            .fa-regular::before {
+              opacity: 0;
+            }
+  
+            .fa-solid::before {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+        }
+      }
+  
+      .card__city {
+        @include card-city;
+      }
+    }
+  }

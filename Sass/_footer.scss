@@ -1,0 +1,22 @@
+
+
+.footer__layout {
+    @include footer;
+  
+    .footer__title {
+      @extend %secondary-font;
+      padding: $padding-title__footer;
+    }
+    a {
+      color: $white;
+    }
+    li {
+      padding-top: $padd;
+    }
+    .footer__list {
+      list-style: none;
+      margin: 0;
+      padding-bottom: $padd;
+      padding-left: $padd;
+    }
+  }
