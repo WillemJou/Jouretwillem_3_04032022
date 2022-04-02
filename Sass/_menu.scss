@@ -1,4 +1,9 @@
-@import "home-restaurants";
+@import "mixins";
+@import "variables";
+@import "keyframes";
+@import "extensions";
+@import "general";
+@import "conditions";
 
 .main__menu {
     background-color: $darken__background;
@@ -35,26 +40,42 @@
       }
     }
   
+
+    .entree{
+
+      animation: 2s unveiling;
   
+     .animation-container-entree-1{
+      animation: 1.3s linear  set-up-1;
+    }
+    .animation-container-entree-2{
+     
+      animation: 1s linear 0.2s set-up-1;
+    }
+    .animation-container-entree-3{
+    
+      animation: 1.4s linear 0.3s set-up-1;
+    
+    }
   
-  
-  
-  
+  }
+
+
   .meal {
     
-    animation: 2s unveiling-2;
+    animation: 2s unveiling-3;
    
     .animation-container-meal-1{
      
-      animation: 2s linear set-up-1;
+      animation: 1.6s linear 1s set-up-1 ;
     }
     .animation-container-meal-2{
      
-      animation: 1s linear 0.4s set-up-1;
+      animation: 1.4s linear 0.8s set-up-1;
     }
     .animation-container-meal-3{
     
-      animation: 1s linear 0.5s set-up-1;
+      animation: 1s linear 1s set-up-1;
     
     }
   }
@@ -65,11 +86,11 @@
   
     .animation-container-dessert-1{
      
-      animation: 2s linear set-up-1;
+      animation: 1.6s linear 1s set-up-1;
     }
     .animation-container-dessert-2{
      
-      animation: 0.8s linear 1.4s set-up-1;
+      animation: 1.2s linear 1.4s set-up-1;
     }
     .animation-container-dessert-3{
     
@@ -86,8 +107,8 @@
     @extend %heart-width;
     opacity: 1;
     transition: opacity 1s;
-    top: 30px;
-    right: 35px;
+    top: 6px;
+    right: 31px;
   }
   
   .title__menu__layout .fa-solid:before {
@@ -107,12 +128,10 @@
     visibility: hidden;
     opacity: 0;
     transition: opacity 1s;
-    top: 45px;
-    right: 50px;
+    top: 21px;
+    right: 46px;
   
-  .menu__title {
-    @extend %secondary-font;
-  }
+  
 }
 
   .menu__part {
@@ -120,30 +139,7 @@
     animation: 5s unveiling;
 
     
-  .entree{
-    animation: 2s unveiling;
-
-   .animation-container-1{
-    animation: 1.3s linear  set-up-1;
-  }
-  .animation-container-2{
-   
-    animation: 1s linear 0.2s set-up-1;
-  }
-  .animation-container-3{
   
-    animation: 1s linear 0.3s set-up-1;
-  
-  }
-
-  .menu__part__title {
-    @include design-menu__part__title;
-  }
-
-}
-
-
-
   .line {
     @include line;
   }
@@ -157,6 +153,7 @@
 
     h3 {
       padding: 0 0 5px 0;
+
     }
 
     &:hover {

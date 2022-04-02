@@ -1,10 +1,13 @@
-
+@import "mixins";
+@import "variables";
+@import "keyframes";
+@import "extensions";
 
 .footer__layout {
     @include footer;
   
     .footer__title {
-      @extend %secondary-font;
+      font-family: Shrikhand !important;
       padding: $padding-title__footer;
     }
     a {

@@ -103,13 +103,14 @@
 }
 
 @mixin design-menu__part__choice {
-  @extend %design-block;
+  @extend %menu-design-block;
   @extend %flex-align-center;
-  @extend %padding-top-bottom;
+  @extend %margin-top-bottom;
   @extend %overflow;
   @extend %space-between;
   background-color: $white;
   padding: 0 0 0 15px;
+  cursor: pointer;
 }
 
 @mixin around-checkbox {
@@ -127,6 +128,7 @@
 @mixin title__menu__layout {
   @extend %rows;
   @extend %padding-title;
+ 
 }
 
 @mixin checkbox-style {

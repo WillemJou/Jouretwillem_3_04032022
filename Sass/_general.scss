@@ -1,0 +1,43 @@
+@import "mixins";
+@import "variables";
+@import "keyframes";
+@import "extensions";
+
+
+body {
+    margin: 0;
+    @extend %primary-font;
+  }
+  
+  a {
+    @extend %neutral-link;
+  }
+  
+  ul {
+    list-style: none;
+  }
+
+  .menu__part__title {
+    @include design-menu__part__title;
+   
+  }
+
+
+  .menu__title {
+    font-family: Shrikhand !important;
+  }
+
+  .heart-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100px;
+    height: 46px;
+  }
+
+
+  
+  h3 {
+    margin: 0;
+  }
+  

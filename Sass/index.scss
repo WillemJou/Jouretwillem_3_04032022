@@ -11,25 +11,9 @@
 @import "header";
 @import "menu";
 @import "contact";
+@import "general";
 
 
-
-body {
-  margin: 0;
-  font-family: "Roboto";
-}
-
-a {
-  @extend %neutral-link;
-}
-
-ul {
-  list-style: none;
-}
-
-h3 {
-  margin: 0;
-}
 
 
 

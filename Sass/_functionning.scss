@@ -1,4 +1,7 @@
+@import "mixins";
 @import "variables";
+@import "keyframes";
+@import "extensions";
 
 .functionning {
     @extend %padding-side;

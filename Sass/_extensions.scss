@@ -48,6 +48,11 @@
   padding: $padd-block;
   border-radius: $radius;
 }
+%menu-design-block {
+  box-shadow: $bottom__omber;
+  border-radius: $radius;
+}
+
 
 %neutral-link {
   text-decoration: none;
@@ -75,7 +80,7 @@
   padding: $icon__padd;
 }
 
-%padding-top-bottom {
+%margin-top-bottom {
   margin: $padding-top-bottom;
 }
 
