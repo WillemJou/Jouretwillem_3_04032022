@@ -1,2 +1,56 @@
+@import "mixins";
+@import "variables";
+@import "keyframes";
+@import "extensions";
+
+.loading-page{
+    z-index: 3;
+    transition: transform 5s;
+    animation: 1s forwards 5s vanish;
+ position: fixed;
+ inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $darken__background;
 
 
+ .loading-container{
+
+    animation: 1.5s infinite 4.5s rotate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+
+     .loading-spin{
+        width: 60px;
+    border-radius: 50%;
+    border: 5px solid $color__primary;
+    border-top: 5px solid $color__secondary;
+    height: 60px;
+    animation: 1s spin-rotate infinite;
+ }
+
+ .loading-text{
+
+    margin-top: 20px;
+    @extend %secondary-font;
+     background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from($color__primary),
+        to($color__secondary)
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+     
+ }
+}
+
+ 
+}

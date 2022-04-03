@@ -9,16 +9,19 @@
   
   .fa-mobile-screen-button {
     @extend %functionning__list__png;
+    @extend %color-icon-base;
     @extend %color-transition;
   }
   
   .fa-list {
     @extend %functionning__list__png;
+    @extend %color-icon-base;
     @extend %color-transition;
   }
   
   .fa-store {
     @extend %functionning__list__png;
+    @extend %color-icon-base;
     @extend %color-transition;
   }
   

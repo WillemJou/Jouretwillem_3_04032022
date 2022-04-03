@@ -3,6 +3,14 @@
 @import "keyframes";
 @import "extensions";
 @import "menu";
+@import "research";
+@import "functionning";
+@import "home-restaurants";
+@import "footer";
+@import "header";
+@import "menu";
+@import "contact";
+@import "general";
 
 
 @media screen and (min-width: 740px) and (max-width: 1115px) {
@@ -44,18 +52,18 @@
     .line-restaurants-desk {
       border-bottom: solid 3px $color__tertiary !important;
       position: absolute;
-      width: 203px !important;
-      left: 55%;
+      width: 173px !important;
+      left: 57%;
     }
   
     .line-fonctionnement-desk {
       border-bottom: solid 3px $color__tertiary !important;
       position: absolute;
-      width: 265px !important;
+      width: 238px !important;
     }
   
     .functionning {
-      padding: 2% !important;
+      padding: 6% 2% !important;
       background-color: $darken__background;
     }
   
@@ -70,6 +78,7 @@
   
       .functionning__list__li {
         display: flex;
+        margin-left: 0 !important;
         justify-content: center;
         align-content: center;
         align-items: center;
@@ -184,12 +193,12 @@
   
     .line-restaurants-desk {
       border-bottom: solid 3px $color__tertiary !important;
-      width: 203px !important;
+      width: 175px !important;
     }
   
     .line-fonctionnement-desk {
       border-bottom: solid 3px $color__tertiary !important;
-      width: 265px !important;
+      width: 245px !important;
     }
   
     .align-line {

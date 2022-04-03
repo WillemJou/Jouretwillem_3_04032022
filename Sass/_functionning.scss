@@ -2,6 +2,7 @@
 @import "variables";
 @import "keyframes";
 @import "extensions";
+@import "general";
 
 .functionning {
     @extend %padding-side;
