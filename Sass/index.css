@@ -160,8 +160,8 @@
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -171,8 +171,8 @@
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -459,8 +459,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -762,8 +762,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -1050,8 +1050,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -1338,8 +1338,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -1864,8 +1864,8 @@ h3 {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -2208,8 +2208,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -2496,8 +2496,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -2874,8 +2874,8 @@ h3 {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -3078,6 +3078,16 @@ a, .functionning .functionning__list .functionning__list__li {
   text-overflow: ellipsis;
 }
 
+#home-restaurants {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 #home-restaurants .card {
   width: 100%;
   height: auto;
@@ -3246,8 +3256,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -3560,8 +3570,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -3860,8 +3870,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -4148,8 +4158,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -4674,8 +4684,8 @@ h3 {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -5028,8 +5038,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -5315,11 +5325,9 @@ h3 {
   }
   .line-restaurants-desk {
     border-bottom: solid 3px #99e2d0 !important;
-    position: absolute;
-    width: 173px !important;
-    left: 57%;
+    width: 100%;
   }
-  .line-fonctionnement-desk {
+  .line-functionning-desk {
     border-bottom: solid 3px #99e2d0 !important;
     position: absolute;
     width: 238px !important;
@@ -5397,7 +5405,7 @@ h3 {
             align-items: center;
     margin: 3% 0 !important;
   }
-  .align-line-accueil {
+  .align-line-functionning {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -5408,9 +5416,23 @@ h3 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin: 3% 0 !important;
+    width: 100%;
     -ms-flex-direction: column-reverse !important;
         flex-direction: column-reverse !important;
+  }
+  .align-line-restaurants {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 175px;
+    flex-direction: column !important;
   }
   .align-line-contact {
     display: -webkit-box;
@@ -5490,7 +5512,7 @@ h3 {
     border-bottom: solid 3px #99e2d0 !important;
     width: 175px !important;
   }
-  .line-fonctionnement-desk {
+  .line-functionning-desk {
     border-bottom: solid 3px #99e2d0 !important;
     width: 245px !important;
   }
@@ -5517,7 +5539,21 @@ h3 {
     margin: 3% 0 !important;
     padding-left: 10%;
   }
-  .align-line-accueil {
+  .align-line-functionning {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 1% 0 !important;
+    flex-direction: column !important;
+  }
+  .align-line-restaurants {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -5693,8 +5729,8 @@ h3 {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -6037,8 +6073,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -6325,8 +6361,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -6703,8 +6739,8 @@ h3 {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -6907,6 +6943,16 @@ a, .functionning .functionning__list .functionning__list__li {
   text-overflow: ellipsis;
 }
 
+#home-restaurants {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 #home-restaurants .card {
   width: 100%;
   height: auto;
@@ -7075,8 +7121,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -7389,8 +7435,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -7689,8 +7735,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -7977,8 +8023,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -8503,8 +8549,8 @@ h3 {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -8857,8 +8903,8 @@ a, .functionning .functionning__list .functionning__list__li {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -9183,8 +9229,8 @@ h3 {
             transform: translateY(30px);
   }
   to {
-    -webkit-transform: transformY(0);
-            transform: transformY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 

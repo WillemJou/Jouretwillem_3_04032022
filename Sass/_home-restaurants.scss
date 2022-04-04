@@ -6,6 +6,8 @@
 
 #home-restaurants {
     @extend %padding-side;
+    display: flex;
+    flex-direction: column;
     @extend %darken-background;
   
     .card {

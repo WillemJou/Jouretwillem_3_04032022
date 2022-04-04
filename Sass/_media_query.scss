@@ -51,12 +51,11 @@
   
     .line-restaurants-desk {
       border-bottom: solid 3px $color__tertiary !important;
-      position: absolute;
-      width: 173px !important;
-      left: 57%;
+      width: 100%;
+      
     }
   
-    .line-fonctionnement-desk {
+    .line-functionning-desk {
       border-bottom: solid 3px $color__tertiary !important;
       position: absolute;
       width: 238px !important;
@@ -111,13 +110,21 @@
       margin: 3% 0 !important;
     }
   
-    .align-line-accueil{
+    .align-line-functionning{
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 3% 0 !important;
+      width: 100%;
       flex-direction: column-reverse !important;
+    }
+
+    .align-line-restaurants{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
   
+      width: 175px;
+      flex-direction: column!important;
     }
   
     .align-line-contact{
@@ -196,7 +203,7 @@
       width: 175px !important;
     }
   
-    .line-fonctionnement-desk {
+    .line-functionning-desk {
       border-bottom: solid 3px $color__tertiary !important;
       width: 245px !important;
     }
@@ -214,7 +221,16 @@
       padding-left: 10%;
     }
   
-    .align-line-accueil{
+    .align-line-functionning{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1% 0 !important;
+      flex-direction: column !important;
+  
+    }
+    
+     .align-line-restaurants{
       display: flex;
       flex-direction: column;
       align-items: center;
